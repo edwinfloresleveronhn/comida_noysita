@@ -18,7 +18,7 @@ class compracontroller extends Controller
      */
     public function index()
     {
-        $compras = Http::get('https://noysitaapi-production.up.railway.app/compras/')->json();
+        $compras = Http::get('https://noysitaapi-production-4864.up.railway.app/compras/')->json();
     
         return view('compra.index',compact('compras')); 
     }
@@ -41,7 +41,7 @@ class compracontroller extends Controller
      */
     public function store(ValidacionCompra $request)
     {
-        $compras = Http::post('https://noysitaapi-production.up.railway.app/insertar_compra', [
+        $compras = Http::post('https://noysitaapi-production-4864.up.railway.app/insertar_compra', [
             'NOMBRE_PRODUCTO'=> $request->nombre_producto,
             'PRECIO_PRODUCTO' => $request->precio_producto,
             'CANTIDAD_PRODUCTO' => $request->cantidad_producto,
@@ -86,7 +86,7 @@ class compracontroller extends Controller
      */
     public function update(ValidacionCompra $request, $COD_COMPRA)
     {
-        $compras  = Http::put('https://noysitaapi-production.up.railway.app/compras/edit/'. $COD_COMPRA ,[
+        $compras  = Http::put('https://noysitaapi-production-4864.up.railway.app/compras/edit/'. $COD_COMPRA ,[
             'NOMBRE_PRODUCTO'=> $request->nombre_producto,
             'PRECIO_PRODUCTO' => $request->precio_producto,
             'CANTIDAD_PRODUCTO' => $request->cantidad_producto,
@@ -106,7 +106,7 @@ class compracontroller extends Controller
      */
     public function destroy($COD_COMPRA)
     {
-        $compras = Http::delete('https://noysitaapi-production.up.railway.app/compras/delete/'. $COD_COMPRA);
+        $compras = Http::delete('https://noysitaapi-production-4864.up.railway.app/compras/delete/'. $COD_COMPRA);
 
         return redirect()-> route('compra.index')->with('eliminado','la compra fue eliminado correctamente'); 
     }

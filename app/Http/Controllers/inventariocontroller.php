@@ -18,7 +18,7 @@ class inventariocontroller extends Controller
      */
     public function index()
     {
-        $inventarios = Http::get('https://noysitaapi-production.up.railway.app/inventarios/')->json();
+        $inventarios = Http::get('https://noysitaapi-production-4864.up.railway.app/inventarios/')->json();
     
         return view('inventario.index',compact ('inventarios')); 
     }
@@ -41,7 +41,7 @@ class inventariocontroller extends Controller
      */
     public function store(ValidacionInventario $request)
     {
-        $inventarios = Http::post('https://noysitaapi-production.up.railway.app/insertar_inventario', [
+        $inventarios = Http::post('https://noysitaapi-production-4864.up.railway.app/insertar_inventario', [
             'NOMBRE_PRODUCTO'=> $request->nombre_producto,
             'PRECIO_PRODUCTO' => $request->precio_producto,
             'CANTIDAD_PRODUCTO' => $request->cantidad_producto,
@@ -87,7 +87,7 @@ class inventariocontroller extends Controller
      */
     public function update(ValidacionInventario $request, $COD_PRODUCTO)
     {
-        $inventarios  = Http::put('https://noysitaapi-production.up.railway.app/inventarios/edit/'. $COD_PRODUCTO ,[
+        $inventarios  = Http::put('https://noysitaapi-production-4864.up.railway.app/inventarios/edit/'. $COD_PRODUCTO ,[
             'NOMBRE_PRODUCTO'=> $request->nombre_producto,
             'PRECIO_PRODUCTO' => $request->precio_producto,
             'CANTIDAD_PRODUCTO' => $request->cantidad_producto,
@@ -109,7 +109,7 @@ class inventariocontroller extends Controller
      */
     public function destroy($COD_PRODUCTO)
     {
-        $inventarios = Http::delete('https://noysitaapi-production.up.railway.app/inventarios/delete/'. $COD_PRODUCTO);
+        $inventarios = Http::delete('https://noysitaapi-production-4864.up.railway.app/inventarios/delete/'. $COD_PRODUCTO);
 
         return redirect()-> route('inventario.index')->with('eliminado','El producto fue eliminado correctamente'); 
     }

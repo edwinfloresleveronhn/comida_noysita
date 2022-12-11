@@ -16,7 +16,7 @@ class BitacoraController extends Controller
      */
     public function index()
     {
-        $bitacoras = Http::get('https://noysitaapi-production.up.railway.app/bitacora/')->json();
+        $bitacoras = Http::get('https://noysitaapi-production-4864.up.railway.app/bitacora/')->json();
     
         return view('bitacora.index',compact('bitacoras')); 
     }
