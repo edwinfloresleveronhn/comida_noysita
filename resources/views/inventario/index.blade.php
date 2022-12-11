@@ -29,9 +29,7 @@
                             <th>Precio Producto</th>
                             <th>Cantidad Producto</th>
                             <th>Categoria Producto</th>
-                            <th>Fecha Vencimiento</th>
-                            <th>Maximo Producto</th>
-                            <th>Minimo Producto</th>
+                           
                             <th>Acciones</th>
                         </tr>
                     </thead>
@@ -43,9 +41,6 @@
                                 <td>{{$inventario['PRECIO_PRODUCTO']}}</td>                   
                                 <td>{{$inventario['CANTIDAD_PRODUCTO']}}</td>
                                 <td>{{$inventario['CATEGORIA_PRODUCTO']}}</td>
-                                <td>{{$inventario['FECHA_VENCIMIENTO']}}</td>
-                                <td>{{$inventario['MAXIMO_PRODUCTO']}}</td>
-                                <td>{{$inventario['MINIMO_PRODUCTO']}}</td>
                                 <td width='10px'>
                                     <form action="{{route('inventario.destroy' ,$inventario['COD_PRODUCTO'])}}" method="POST" class="eliminar_inventario">
                                         <a class="btn btn-warning " 
