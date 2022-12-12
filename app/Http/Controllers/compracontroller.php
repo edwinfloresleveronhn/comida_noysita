@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ValidacionCompra;
 use App\Models\compra;
+use App\Models\inventario;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
@@ -49,12 +51,16 @@ class compracontroller extends Controller
             'FECHA_COMPRA' => $request->fecha_compra,     
         ]); 
 
-        $compras = Http::post('https://noysitaapi-production-4864.up.railway.app/insertar_inventarios', [
+        $compras = Http::post('https://noysitaapi-production-4864.up.railway.app/insertar_inventario', [
             'NOMBRE_PRODUCTO'=> $request->nombre_producto,
             'PRECIO_PRODUCTO' => $request->precio_producto,
             'CANTIDAD_PRODUCTO' => $request->cantidad_producto,
-            'CATEGORIA_PRODUCTO'=> $request->catalogo_producto,  
+            'CATEGORIA_PRODUCTO'=> $request->catalogo_producto,
+            'FECHA_VENCIMIENTO' => Carbon::now()->addDays(30)->format('Y-m-d'),
+            'MAXIMO_PRODUCTO' => '30',
+            'MINIMO_PRODUCTO' => '1',
         ]); 
+            
 
            return redirect()-> route('compra.index')->with('agregado','la Compra fue agregado correctamente'); 
         

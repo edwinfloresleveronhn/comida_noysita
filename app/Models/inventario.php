@@ -11,4 +11,11 @@ class inventario extends Model
     public $timestamps = false;
     protected $table = 'tbl_inventario';
     protected $primaryKey = 'COD_PRODUCTO';
+
+    protected $fillable = [
+        'NOMBRE_PRODUCTO',
+        'PRECIO_PRODUCTO',
+        'CANTIDAD_PRODUCTO' ,
+        'CATEGORIA_PRODUCTO'
+    ];
 }
