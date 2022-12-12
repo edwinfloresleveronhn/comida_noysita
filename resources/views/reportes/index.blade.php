@@ -53,7 +53,7 @@
                 </h3>
             </div>
             <div class="card-body">
-                <div class="text-center"> <a class="btn btn-success float" href="#">
+                <div class="text-center"> <a class="btn btn-success float" href="{{route('export_proveedores')}}">
                        <i class="fas fa-file-csv"></i>
                         Generar reporte
                     </a>
@@ -71,7 +71,7 @@
             </div>
             <div class="card-body">
                 <div class="text-center"> 
-                    <a class="btn btn-success float" href="#">
+                    <a class="btn btn-success float" href="{{route('export_inventario')}}">
                         <i class="fas fa-file-csv"></i>
                         Generar reporte
                     </a>

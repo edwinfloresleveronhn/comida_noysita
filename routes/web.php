@@ -58,3 +58,5 @@ Route::group(['middleware' => ['auth']], function() {
 Route::get('/reportes', [reportesController::class, 'index'])->name('reportes.index');
 Route::get('/reportes/clientes', [reportesController::class, 'export_cliente'])->name('export_cliente');
 Route::get('/reportes/empleado', [reportesController::class, 'export_empleado'])->name('export_empleado');
+Route::get('/reportes/proveedores', [reportesController::class, 'export_proveedores'])->name('export_proveedores');
+Route::get('/reportes/inventario', [reportesController::class, 'export_inventario'])->name('export_inventario');
