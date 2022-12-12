@@ -50,7 +50,13 @@
       <div class="col-6">
         <div class="form-group">
             <label for="">Catalogo Producto</label>
-            <input type="text" class="form-control" id="catalogo_producto" name="catalogo_producto" placeholder="" value="{{old('catalogo_producto', $compras['CATALOGO_PRODUCTO'])}}"required>    <div class="valid-feedback">DATO VALIDO.</div><div class="invalid-feedback">LOS CAMPOS NO PUEDEN ESTAR VACIOS.INTRODUZCA SOLO LETRAS</div>
+            <select class="form-control" name="catalogo_producto">
+                <option>Seleccione ....</option>
+                <option  value="1" {{ old('catalogo_producto') == 1 ? 'selected' : '' }}>Carne</option>
+                <option value="2" {{ old('catalogo_producto') == 2 ? 'selected' : '' }}>Verduras</option>
+                <option value="3" {{ old('catalogo_producto') == 3 ? 'selected' : '' }}>Pollo</option>
+                <option value="4" {{ old('catalogo_producto') == 4 ? 'selected' : '' }}>Marisco</option>
+              </select>
             @error('catalogo_producto')
             <span class="text-danger">{{$message}}</span>
             @enderror
