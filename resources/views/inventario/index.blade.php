@@ -29,8 +29,7 @@
                             <th>Precio Producto</th>
                             <th>Cantidad Producto</th>
                             <th>Categoria Producto</th>
-                           
-                            <th>Acciones</th>
+                        
                         </tr>
                     </thead>
                     <tbody>
@@ -41,22 +40,7 @@
                                 <td>{{$inventario['PRECIO_PRODUCTO']}}</td>                   
                                 <td>{{$inventario['CANTIDAD_PRODUCTO']}}</td>
                                 <td>{{$inventario['CATEGORIA_PRODUCTO']}}</td>
-                                <td width='10px'>
-                                    <form action="{{route('inventario.destroy' ,$inventario['COD_PRODUCTO'])}}" method="POST" class="eliminar_inventario">
-                                        <a class="btn btn-warning " 
-                                        href="{{route('inventario.edit', $inventario['COD_PRODUCTO'])}}">
-                                                <i class="far fa-edit">
-                                                </i>
-                                            </a>
-                                            @csrf
-                                            @method('DELETE')
-                                            <button class="btn btn-danger">
-                                                    <i class="fas fa-trash-alt">
-                                                    </i>
-                                                </button>
-                                        </form>
-                                       
-                                        </td>
+                                
                                     </tr>
                    @endforeach
                     </tbody>
