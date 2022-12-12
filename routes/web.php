@@ -13,6 +13,7 @@ use App\Http\Controllers\logscontroller;
 use App\Http\Controllers\platilloscontroller;
 use App\Http\Controllers\proveedorcontroller;
 use App\Http\Controllers\perfilcontroller;
+use App\Http\Controllers\reportesController;
 use App\Http\Controllers\respaldoController;
 use App\Http\Controllers\RolController;
 use Illuminate\Support\Facades\Route;
@@ -49,6 +50,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('rol',RolController::class)->names('rol');
     Route::resource('bitacora',BitacoraController::class)->names('bitacora');
     Route::resource('respaldo',respaldoController::class)->names('respaldo');
+    Route::resource('reportes',reportesController::class)->names('reportes');
     
     //  Route::get('logs', [\Rap2hpoutre\LaravelLogViewer\LogViewerController::class, 'index']);
 

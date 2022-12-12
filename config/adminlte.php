@@ -408,6 +408,18 @@ return [
             ],
             
         ],
+        [
+            'text'    => ' Reportes',
+            'icon' => 'fas fa-bullhorn',
+            
+            'submenu' => [
+                [
+                    'text' => 'Reportes',
+                    'route'  => 'reportes.index',
+                ],
+            ],
+            
+        ],
         ['header' => 'RESPALDO DEL SISTEMA'],
         //modulos Bitacora
         
