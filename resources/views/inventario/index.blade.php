@@ -15,12 +15,6 @@
             <div class="card-body">
                 @csrf
                 <div class="card-content">
-                    <a class="btn btn-success float-right" href="{{ route('inventario.create') }}">
-                        <i class="fas fa-plus"></i>
-                        Nuevo Producto 
-                        </a>
-                        <br>
-                        <br>
                 </div>
                 <table id="inventario" class="display responsive nowrap" style="width:100%">
                     <thead>
