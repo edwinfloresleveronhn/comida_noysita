@@ -55,7 +55,7 @@
           <div class="col-6">
             <div class="form-group">
               <label for="">Catalogo Producto</label>
-              <select class="form-control">
+              <select class="form-control" name="catalogo_producto">
                 <option>Seleccione ....</option>
                 <option>Carne</option>
                 <option>Verduras</option>
