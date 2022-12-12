@@ -18,7 +18,7 @@
                 </h3>
             </div>
             <div class="card-body">
-                <div class="text-center"> <a class="btn btn-success float" href="#">
+                <div class="text-center"> <a class="btn btn-success float" href="{{route('export_empleado')}}">
                        <i class="fas fa-file-csv"></i>
                         Generar reporte
                     </a>
@@ -36,7 +36,7 @@
                 </h3>
             </div>
             <div class="card-body">
-                <div class="text-center"> <a class="btn btn-success float" href="#">
+                <div class="text-center"> <a class="btn btn-success float" href="{{route('export_cliente')}}">
                        <i class="fas fa-file-csv"></i>
                         Generar reporte
                     </a>

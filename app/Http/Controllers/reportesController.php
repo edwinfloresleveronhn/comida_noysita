@@ -2,83 +2,36 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\ClientesExport;
+use App\Exports\EmpleadoExport;
+use App\Models\Empleado;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class reportesController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         return view('reportes.index');
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function export_cliente()
     {
-        //
+        return Excel::download(new ClientesExport, 'clientes.xlsx');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function export_empleado()
     {
-        //
+        return Excel::download(new EmpleadoExport, 'empleados.xlsx');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    public function proveedor()
     {
-        //
+        return Excel::download(new ClientesExport, 'proveedores.xlsx');
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    public function inventario()
     {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        return Excel::download(new ClientesExport, 'inventario.xlsx');
     }
 }

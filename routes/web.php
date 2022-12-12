@@ -50,8 +50,11 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('rol',RolController::class)->names('rol');
     Route::resource('bitacora',BitacoraController::class)->names('bitacora');
     Route::resource('respaldo',respaldoController::class)->names('respaldo');
-    Route::resource('reportes',reportesController::class)->names('reportes');
     
     //  Route::get('logs', [\Rap2hpoutre\LaravelLogViewer\LogViewerController::class, 'index']);
 
 });
+
+Route::get('/reportes', [reportesController::class, 'index'])->name('reportes.index');
+Route::get('/reportes/clientes', [reportesController::class, 'export_cliente'])->name('export_cliente');
+Route::get('/reportes/empleado', [reportesController::class, 'export_empleado'])->name('export_empleado');
