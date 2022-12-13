@@ -46,7 +46,7 @@ class ValidacionCompra extends FormRequest
                ' cantidad_producto.numeric' => 'El campo  cantidad producto solo puede contener numeros.' ,
                /* Validacion campo TIPO PAGO */
              'catalogo_producto.required' => 'El campo catalogo producto es requerido. No puede estar vacio.' ,
-             'catalogo_producto.alpha' => 'El campo catalogo producto solo puede contener letras.' ,
+             'catalogo_producto.alpha_spaces' => 'El campo catalogo producto solo puede contener letras.' ,
               /* Validacion campo FECHA COMPRA */
               'fecha_compra.required' => 'El campo fecha de compra es requerido. No puede estar vacio.' ,
               

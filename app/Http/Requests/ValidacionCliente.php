@@ -47,7 +47,7 @@ class ValidacionCliente extends FormRequest
                'rtn.numeric' => 'El campo rtn solo puede contener numeros.' ,
                /* Validacion campo TIPO PAGO */
              'tipo_pago.required' => 'El campo tipo pago es requerido. No puede estar vacio.' ,
-             'tipo_pago.alpha' => 'El campo tipo pago solo puede contener letras.' ,
+             'tipo_pago.alpha_spaces' => 'El campo tipo pago solo puede contener letras.' ,
               /* Validacion campo INGRESO CLIENTE */
               'ingreso_cliente.required' => 'El campo ingreso cliente es requerido. No puede estar vacio.' ,
                /* Validacion campo DIRECCION */

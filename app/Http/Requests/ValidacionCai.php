@@ -24,7 +24,7 @@ class ValidacionCai extends FormRequest
     public function rules()
     {
         return [
-            'cai' => 'required',
+            'cai' => 'required|regex:/^[a-zA-Z0-9]+$/',
             'tipo_documento' => 'required|alpha_spaces',
             'valor_fiscal' => 'required|alpha_spaces',
             'fecha_vencimiento' => 'required',
@@ -40,10 +40,12 @@ class ValidacionCai extends FormRequest
         return[
             /* Validacion campo CAI */
              'cai.required' => 'El campo cai  es requerido. No puede estar vacio El campo cai  solo puede contener letras e numeros.' ,
+             'cai.regex' => 'El campo cai no admite caracteres especiales.Solo puedes ingresar letras y numeros.' ,
            
             /* Validacion campo TIPO DOCUMENTO */
-            'tipo_documento.required' => 'El campo precio platillo  es requerido. No puede estar vacio.' ,
-            'tipo_documento.numeric' => 'El campo precio platillo solo puede contener numeros.' ,
+            'tipo_documento.required' => 'El campo tipo documento  es requerido. No puede estar vacio.' ,
+            'tipo_documento.numeric' => 'El campo tipo documento solo puede contener numeros.' ,
+            'tipo_documento.alpha_spaces' => 'El campo tipo documento  solo puede contener letras.' ,
             /* Validacion campo VALOR FISCAL */
             'valor_fiscal.required' => 'El campo valor fiscal  es requerido. No puede estar vacio.' ,
             'valor_fiscal.alpha_spaces' => 'El campo valor fiscal  solo puede contener letras.' ,
