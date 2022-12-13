@@ -63,6 +63,17 @@
                                         </form>
                                        
                                         </td>
+                                        <td width='10px'>
+                                    <form >
+                                        <a class="btn btn-warning " 
+                                        href="{{route('factura.show', $factura['COD_FACTURA'])}}">
+                                                <i class="far fa-edit">
+                                                </i>
+                                            </a>
+                                            @csrf
+                                        </form>
+                                       
+                                        </td>
                                     </tr>
                    @endforeach
                     </tbody>

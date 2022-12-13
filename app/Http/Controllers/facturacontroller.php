@@ -64,9 +64,11 @@ class facturacontroller extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($COD_FACTURA)
     {
-        //
+        $facturas = factura::findorfail($COD_FACTURA); 
+        
+        return view('factura.factura', compact('facturas')); 
     }
 
     /**
