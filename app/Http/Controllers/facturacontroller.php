@@ -91,7 +91,7 @@ class facturacontroller extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(ValidacionFactura $request, $COD_FACTURA)
+    public function update(Request $request, $COD_FACTURA)
     {
         $facturas  = Http::put('https://noysitaapi-production-4864.up.railway.app/facturas/edit/'. $COD_FACTURA ,[
             'NUMERO_FACTURA'=> $request->numero_factura,

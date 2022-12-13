@@ -17,19 +17,8 @@
             <div class="row">
                 <div class="col-2-4">
                     <div class="slogan">Facturación </div>
-
-                    <label for="config_tax">IVA:
-                        <input type="checkbox" id="config_tax" />
-                    </label>
-                    <label for="config_tax_rate" class="taxrelated">Tasa:
-                        <input type="text" id="config_tax_rate" value="13" />%
-                    </label>
-                    <label for="config_note">Nota:
-                        <input type="checkbox" id="config_note" />
-                    </label>
-
                 </div>
-                <div class="col-4 text-right">
+                <div class="col-4 text-center">
                     <a href="javascript:window.print()">Imprimir</a>
                 </div>
                 <!--.col-->
@@ -129,9 +118,7 @@
     <div class="invoicelist-body">
         <table>
             <thead>
-                <th width="5%">Código</th>
                 <th width="60%">Descripción</th>
-
                 <th width="10%">Cant.</th>
                 <th width="15%">Precio</th>
                 <th class="taxrelated">IVA</th>
@@ -139,16 +126,15 @@
             </thead>
             <tbody>
                 <tr>
-                    <td width='5%'><a class="control removeRow" href="#">x</a> <span>12345</span></td>
-                    <td width='60%'><span>Descripción</span></td>
-                    <td class="amount"><input type="text" value="1" /></td>
-                    <td class="rate"><input type="text" value="99" /></td>
-                    <td class="tax taxrelated"></td>
-                    <td class="sum"></td>
+                    <td width='60%'><span>{{$facturas ['PLATILLO']}}</span></td>
+                    <td class="amount">{{$facturas ['CANTIDAD_PLATILLO']}}</td>
+                    <td class="rate">{{$facturas ['PRECIO']}}</td>
+                    <td class="tax taxrelated">{{$facturas['IVA']}}</td>
+                    <td class="sum">{{$facturas ['TOTAL_FACTURA']}}</td>
                 </tr>
             </tbody>
         </table>
-        <a class="control newRow" href="#">+ Nueva fila</a>
+      <!--   <a class="control newRow" href="#">+ Nueva fila</a> -->
     </div>
     <!--.invoice-body-->
 
@@ -156,26 +142,26 @@
         <table>
             <tr class="taxrelated">
                 <td>IVA:</td>
-                <td id="total_tax"></td>
+                <td id="total_tax">{{$facturas['IVA']}}</td>
             </tr>
             <tr>
                 <td><strong>Total:</strong></td>
-                <td id="total_price"></td>
+                <td id="total_price">{{$facturas ['TOTAL_FACTURA']}}</td>
             </tr>
         </table>
     </div>
 
-    <div class="note">
+  <!--   <div class="note">
         <h2>Nota:</h2>
-    </div>
+    </div> -->
     <!--.note-->
 
-    <footer class="row">
+  <!--   <footer class="row">
         <div class="col-1 text-center">
             <p class="notaxrelated">El monto de la factura no incluye el impuesto sobre las ventas.</p>
 
         </div>
-    </footer>
+    </footer> -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script>

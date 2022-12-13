@@ -35,9 +35,9 @@
               <input type="text" class="form-control" id="nombre_cliente" name="nombre_cliente" placeholder="" value="{{old('nombre_cliente',$facturas['NOMBRE_CLIENTE'])}}" required pattern="^[a-zA-Z ]*$">
               <!-- <div class="valid-feedback">DATO VALIDO.</div> -->
               <div class="invalid-feedback">LOS CAMPOS NO PUEDEN ESTAR VACIOS.INTRODUZCA SOLO LETRA</div>
-              @error('nombre_cliente')
+           <!--    @error('nombre_cliente')
               <span class="text-danger">{{$message}}</span>
-              @enderror
+              @enderror -->
             </div>
           </div>
         </div>

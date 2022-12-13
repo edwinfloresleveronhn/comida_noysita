@@ -471,7 +471,7 @@ h1 {
 .tax:before,
 #total_price:before,
 #total_tax:before {
-    content: '$'
+    content: 'L '
 }
 
 .invoicelist-body {
