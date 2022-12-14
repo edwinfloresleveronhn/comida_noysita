@@ -398,7 +398,12 @@ return [
             
             'submenu' => [
                 [
-                    'text' => 'roles',
+                    'text' => 'Usuarios',
+                    'route'  => 'usuarios.index',
+                ],
+                
+                [
+                    'text' => 'Roles',
                     'route'  => 'rol.index',
                 ],
                 [

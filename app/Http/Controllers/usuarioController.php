@@ -2,7 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+use Spatie\Permission\Models\Role;
+
 
 class usuarioController extends Controller
 {
@@ -13,7 +19,9 @@ class usuarioController extends Controller
      */
     public function index()
     {
-        //
+        $usuarios = User::paginate(5);
+
+        return view('usuarios.index', compact('usuarios'));
     }
 
     /**
@@ -23,7 +31,9 @@ class usuarioController extends Controller
      */
     public function create()
     {
-        //
+        $roles = Role::pluck('name', 'name')->all();  
+        
+        return view('usuarios.create ', compact('roles'));
     }
 
     /**
@@ -34,7 +44,13 @@ class usuarioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->all();
+        $input['password'] = Hash::make($input['password']);
+
+        $usuarios = User::create($input);
+        $usuarios ->assignRole($request->input('roles'));
+
+        return redirect()->route('usuarios.index');
     }
 
     /**
@@ -56,7 +72,10 @@ class usuarioController extends Controller
      */
     public function edit($id)
     {
-        //
+         $usuarios = User::findorfail($id);
+         $roles = Role::pluck('name', 'name')->all();
+         $usariosRoles = $usuarios->roles->pluck('name', 'name')->all();
+         return view('usuarios.index', compact('usuarios', 'roles', 'usariosRoles'));
     }
 
     /**
@@ -68,7 +87,19 @@ class usuarioController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $input = $request->all();
+        if(!empty($input['password'])){
+            $input['password'] = Hash::make($input['password']);
+        }else{
+             $input = Arr::except($input , array('password'));
+        }
+
+        $usuarios = User::find($id);
+        $usuarios->update($input);
+        DB::table('model_has_roles')->where('model_id', $id)->delete();
+
+        $usuarios->assignRole($request->input('roles'));
+        return redirect()->route('usuarios.index');
     }
 
     /**
@@ -79,6 +110,7 @@ class usuarioController extends Controller
      */
     public function destroy($id)
     {
-        //
+        User::find($id)->delete();
+        return redirect()->route('usuarios.index');
     }
 }
