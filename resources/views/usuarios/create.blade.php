@@ -15,7 +15,7 @@
         <h3 class="card-title">Usuarios</h3>
       </div>
       <div class="card-body">
-        @csrf
+      @csrf
         <div class="row">
           <div class="col-6">
             <div class="form-group">

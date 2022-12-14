@@ -30,9 +30,9 @@ class RolController extends Controller
      */
     public function index()
     {
-       /*  $roles = Http::get('https://noysitaapi-production-4864.up.railway.app/rol/')->json(); */
+      
     
-        $roles = rol::paginate(5);
+        $roles = Role::paginate(5);
         return view('rol.index',compact('roles')); 
     }
 
@@ -43,8 +43,8 @@ class RolController extends Controller
      */
     public function create()
     {
-        $permisos = Permission::get();
-        return view('rol.create', compact('permisos'));
+        $permission = Permission::get();
+        return view('rol.create', compact('permission'));
     }
 
     /**
@@ -61,7 +61,7 @@ class RolController extends Controller
             'FECHA_REGISTRO' => $request->fecha,
         ]);  */
 
-        $this-> validate($request, ['name'=> 'required', 'permission' => 'required']);
+        $this->validate($request, ['name'=> 'required', 'permission' => 'required']);
         $roles = Role::create(['name'=>$request->input('name')]);
         $roles ->syncPermissions($request->input('permission'));
 
@@ -106,11 +106,7 @@ class RolController extends Controller
      */
     public function update(Request $request, $id)
     {
-       /*  $ROLES  = Http::put('https://noysitaapi-production-4864.up.railway.app/rol/edit/'. $COD_ROL ,[
-            'ROL'=> $request->rol,
-            'USUARIO' => $request->Usuario,
-            'FECHA_REGISTRO' => $request->fecha_registro,
-        ]); */
+     
 
         $this-> validate($request, ['name'=> 'required', 'permission' => 'required']);
         $roles = Role::find($id);

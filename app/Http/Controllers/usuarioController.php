@@ -19,7 +19,7 @@ class usuarioController extends Controller
      */
     public function index()
     {
-        $usuarios = User::paginate(5);
+        $usuarios = User::all();
 
         return view('usuarios.index', compact('usuarios'));
     }
@@ -44,6 +44,8 @@ class usuarioController extends Controller
      */
     public function store(Request $request)
     {
+       
+       
         $input = $request->all();
         $input['password'] = Hash::make($input['password']);
 
@@ -72,10 +74,10 @@ class usuarioController extends Controller
      */
     public function edit($id)
     {
-         $usuarios = User::findorfail($id);
+         $user = User::find($id);
          $roles = Role::pluck('name', 'name')->all();
-         $usariosRoles = $usuarios->roles->pluck('name', 'name')->all();
-         return view('usuarios.index', compact('usuarios', 'roles', 'usariosRoles'));
+         $userRole = $user->roles->pluck('name', 'name')->all();
+         return view('usuarios.edit', compact('user', 'roles', 'userRole'));
     }
 
     /**
@@ -87,6 +89,13 @@ class usuarioController extends Controller
      */
     public function update(Request $request, $id)
     {
+    $this-> validate($request, [
+        'name' => 'required',
+        'email' => 'required|email|unique:users,email,'.$id,
+        'password'=> 'same:confirm-password',
+        'roles'=> 'required'
+    ]);
+       
         $input = $request->all();
         if(!empty($input['password'])){
             $input['password'] = Hash::make($input['password']);
@@ -94,11 +103,11 @@ class usuarioController extends Controller
              $input = Arr::except($input , array('password'));
         }
 
-        $usuarios = User::find($id);
-        $usuarios->update($input);
+        $user = User::find($id);
+        $user->update($input);
         DB::table('model_has_roles')->where('model_id', $id)->delete();
 
-        $usuarios->assignRole($request->input('roles'));
+        $user->assignRole($request->input('roles'));
         return redirect()->route('usuarios.index');
     }
 

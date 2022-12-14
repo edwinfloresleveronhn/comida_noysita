@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-<form action="{{route('usuarios.update')}}" method="put" class="was-validated">
+<form action="{{route('usuarios.update',$user->id)}}" method="PUT" class="was-validated">
   @csrf
   <div class="col-md-12"><br>
     <div class="card card-primary">
@@ -20,7 +20,7 @@
           <div class="col-6">
             <div class="form-group">
               <label for="name">Nombre</label>
-              <input type="text" class="form-control" id="name" name="name" placeholder="" value="{{old('name')}}" required pattern="^[a-zA-Z ]*$">
+              <input type="text" class="form-control" id="name" name="name" placeholder="" value="{{old('name',$user->name)}}" required pattern="^[a-zA-Z ]*$">
               <!-- <div class="valid-feedback">DATO VALIDO.</div> -->
               <div class="invalid-feedback">LOS CAMPOS NO PUEDEN ESTAR VACIOS.INTRODUZCA SOLO LETRAS</div>
               @error('name')
@@ -31,7 +31,7 @@
           <div class="col-6">
             <div class="form-group">
               <label for="email">Correo</label>
-              <input type="email" class="form-control" id="email" name="email" placeholder="" value="{{old('email')}}" required>
+              <input type="email" class="form-control" id="email" name="email" placeholder="" value="{{old('email',$user->email)}}" required>
               <!-- <div class="valid-feedback">DATO VALIDO.</div> -->
               <div class="invalid-feedback">LOS CAMPOS NO PUEDEN ESTAR VACIOS.</div>
               @error('email')
@@ -44,9 +44,9 @@
           <div class="col-6">
             <div class="form-group">
               <label for="password">Contraseña</label>
-              <input type="password" class="form-control" id="password" name="password" placeholder="" value="{{old('password')}}" required>
+              <input type="password" class="form-control" id="password" name="password" placeholder="" value="{{old('password')}}" >
               <!-- <div class="valid-feedback">DATO VALIDO.</div> -->
-              <div class="invalid-feedback">LOS CAMPOS NO PUEDEN ESTAR VACIOS.</div>
+             <!--  <div class="invalid-feedback">LOS CAMPOS NO PUEDEN ESTAR VACIOS.</div> -->
               @error('password')
               <span class="text-danger">{{$message}}</span>
               @enderror
@@ -55,9 +55,9 @@
           <div class="col-6">
             <div class="form-group">
               <label for="confirm-password">Confirmar Contraseña</label>
-              <input type="password" class="form-control" id="confirm-password" name="confirm-password" placeholder="" value="{{old('confirm-password')}}" required>
+              <input type="password" class="form-control" id="confirm-password" name="confirm-password" placeholder="" value="{{old('confirm-password')}}" >
               <!-- <div class="valid-feedback">DATO VALIDO.</div> -->
-              <div class="invalid-feedback">LOS CAMPOS NO PUEDEN ESTAR VACIOS.</div>
+<!--               <div class="invalid-feedback">LOS CAMPOS NO PUEDEN ESTAR VACIOS.</div> -->
               @error('confirm-password')
               <span class="text-danger">{{$message}}</span>
               @enderror

@@ -15,19 +15,19 @@
             <div class="card-body">
                 @csrf
                 <div class="card-content">
+                    @can('crear-rol')
                     <a class="btn btn-success float-right" href="{{ route('rol.create') }}">
                         <i class="fas fa-plus"></i>
                         Nuevo rol de usuario
                         </a>
                         <br>
                         <br>
+                        @endcan
                 </div>
                 <table id="roles" class="display responsive nowrap" style="width:100%">
                     <thead>
                         <tr>
-                            <th>Rol de usuario</th>
-                            <th>Usuario</th>
-                            <th>Fecha ingreso</th>
+                            <th>Rol</th>
                             <th>Acciones</th>
                         </tr>
                     </thead>
@@ -35,13 +35,12 @@
                     
                        @foreach($roles as $rol)
                             <tr>
-                                <td>{{$rol['ROL']}}</td>
-                                <td>{{$rol['USUARIO']}}</td>
-                                <td>{{$rol['FECHA_REGISTRO']}}</td>
+                                <td>{{$rol->name}}</td>
+                              
                                 <td width='10px'>
-                                <form action="{{route('rol.destroy' ,$rol['COD_ROL'])}}" method="POST" class="eliminar_rol">
+                                <form action="{{route('rol.destroy' ,$rol->id)}}" method="POST" class="eliminar_rol">
                                 <a class="btn btn-warning " 
-                                href="{{route('rol.edit', $rol['COD_ROL'])}}">
+                                href="{{route('rol.edit', $rol->id)}}">
                                         <i class="far fa-edit">
                                         </i>
                                     </a>
