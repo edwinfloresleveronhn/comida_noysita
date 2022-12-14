@@ -405,6 +405,7 @@ return [
                 [
                     'text' => 'Roles',
                     'route'  => 'rol.index',
+                    'can' => 'ver-rol'
                 ],
                 [
                     'text' => 'bitacora',

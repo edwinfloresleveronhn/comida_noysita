@@ -39,11 +39,11 @@
             <td>{{$usuario->name}}</td>
             <td>{{$usuario->email}}</td>
             <td>
-            @if(!empty($usuario->getRoleNames()))
-              @foreach($usuario->getRoleNames() as $rolName)
-              <h5><span class="badge badge-dark">{{$rolName}}</span></h5>
+              @if(!empty($usuario->getRoleNames()))
+                @foreach($usuario->getRoleNames() as $rolName)
+              <h5><span class="badge badge-success">{{$rolName}}</span></h5>
               @endforeach
-              @endif 
+              @endif
             </td>
             <td width='10px'>
               <form action="{{route('usuarios.destroy',$usuario->id)}}" method="POST" class="eliminar_empleados">

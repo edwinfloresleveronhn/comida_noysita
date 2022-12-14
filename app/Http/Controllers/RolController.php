@@ -17,10 +17,10 @@ class RolController extends Controller
 
     function __construct()
     {
-        $this->middleware('permission:ver-rol | crear-rol | editar-rol | borrar-rol' ,['only'=>['index']] );
-        $this->middleware('permission: crear-rol' ,['only'=>['create', 'store']] );
-        $this->middleware('permission: editar-rol' ,['only'=>['edit', 'update']] );
-        $this->middleware('permission:  borrar-rol' ,['only'=>['destroy']] );
+        $this->middleware('permission:ver-rol' ,['only'=>['index']] );
+        $this->middleware('permission:crear-rol' ,['only'=>['create', 'store']] );
+        $this->middleware('permission:editar-rol' ,['only'=>['edit', 'update']] );
+        $this->middleware('permission:borrar-rol' ,['only'=>['destroy']] );
 
     }   
     /**
@@ -32,7 +32,7 @@ class RolController extends Controller
     {
       
     
-        $roles = Role::paginate(5);
+        $roles = Role::all();
         return view('rol.index',compact('roles')); 
     }
 
@@ -55,15 +55,10 @@ class RolController extends Controller
      */
     public function store(Request $request)
     {
-        /* $roles = Http::post('https://noysitaapi-production-4864.up.railway.app/insertar_rol', [
-            'ROL'=> $request->rol,
-            'USUARIO' => $request->Usuario,
-            'FECHA_REGISTRO' => $request->fecha,
-        ]);  */
 
         $this->validate($request, ['name'=> 'required', 'permission' => 'required']);
-        $roles = Role::create(['name'=>$request->input('name')]);
-        $roles ->syncPermissions($request->input('permission'));
+        $role = Role::create(['name'=>$request->input('name')]);
+        $role->syncPermissions($request->permission);
 
            return redirect()-> route('rol.index')->with('agregado','El rol fue agregado correctamente'); 
     }
@@ -87,14 +82,14 @@ class RolController extends Controller
      */
     public function edit($id)
     {
-        $roles = Role::find($id); 
-        $permisos = Permission::get();
-        $rolesPermisos = DB::table('role_has_permissions.role_id', $id)
+        $role = Role::find($id); 
+        $permission = Permission::get();
+        $rolePermission = DB::table('role_has_permissions')->where('role_has_permissions.role_id',$id)
         ->pluck('role_has_permissions.permission_id','role_has_permissions.permission_id')
         ->all();
 
         
-        return view('rol.edit', compact('roles','permisos','rolesPermisos'));
+        return view('rol.edit', compact('role','permission','rolePermission'));
     }
 
     /**
@@ -113,7 +108,7 @@ class RolController extends Controller
         $roles->name = $request->input('name');
         $roles->save();
 
-        $roles->syncPermmissions($request->input('permission'));
+        $roles->syncPermissions($request->input('permission'));
 
       
         return redirect()-> route('rol.index')->with('editado','El rol fue editado correctamente'); 

@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'rol')
+@section('title', 'Roles')
 
 @section('content_header')
     <h1>Gestion de roles</h1>
@@ -22,7 +22,7 @@
                         </a>
                         <br>
                         <br>
-                        @endcan
+                        @endcan 
                 </div>
                 <table id="roles" class="display responsive nowrap" style="width:100%">
                     <thead>
@@ -39,17 +39,21 @@
                               
                                 <td width='10px'>
                                 <form action="{{route('rol.destroy' ,$rol->id)}}" method="POST" class="eliminar_rol">
+                                @can('editar-rol')
                                 <a class="btn btn-warning " 
                                 href="{{route('rol.edit', $rol->id)}}">
                                         <i class="far fa-edit">
                                         </i>
                                     </a>
+                                    @endcan 
                                     @csrf
                                     @method('DELETE')
+                                     @can('borrar-rol')
                                     <button class="btn btn-danger">
                                             <i class="fas fa-trash-alt">
                                             </i>
                                         </button>
+                                       @endcan
                                 </form>
                                
                                 </td>

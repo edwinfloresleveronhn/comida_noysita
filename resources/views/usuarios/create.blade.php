@@ -7,16 +7,26 @@
 @stop
 
 @section('content')
-<form action="{{route('usuarios.store')}}" method="post" class="was-validated">
-  @csrf
+
+
   <div class="col-md-12"><br>
     <div class="card card-primary">
       <div class="card-header">
         <h3 class="card-title">Usuarios</h3>
       </div>
       <div class="card-body">
-      @csrf
-        <div class="row">
+       @if ($errors->any())
+       <div class="alert alert-dark alert-dismissible fade show" role="alert">
+        <strong>Revise los campos</strong>
+           @foreach($errors->all() as $error)
+                 <span class="badge bage-danger">{{error}}</span>
+           @endforeach
+       </div>  
+       @endif
+
+       {!! Form::open(array('route'=>'usuarios.store', 'method'=>'POST'))!!}
+      
+       <div class="row">
           <div class="col-6">
             <div class="form-group">
               <label for="name">Nombre</label>
@@ -76,17 +86,20 @@
             </div>
           </div>
         </div>
-      </div>
-      <div class="card-footer">
+        <div class="card-footer">
         <a class="btn btn-danger" href="{{ route('usuarios.index') }}">Regresar</a>
         <button type="submit" class="btn btn-success">Guardar</button>
       </div>
-</form>
+      
+       
+      </div>
+     
+
 <!-- /.card-body -->
 </div>
 <!-- /.card -->
 </div>
-
+{!! Form::close() !!}
 
 @stop
 
