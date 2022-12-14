@@ -27,7 +27,7 @@
                     
                        @foreach($bitacoras as $bitacora)
                             <tr>
-                                <td>{{$bitacora ['FECHA_BITACORA']}}</td>
+                                <td>{{$bitacora ['NUM_BITACORA']}}</td>
                                 <td>{{$bitacora ['USUARIO']}}</td>
                                 <td>{{$bitacora ['ACCION_SISTEMA']}}</td>
                              </tr>
