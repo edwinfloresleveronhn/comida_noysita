@@ -237,7 +237,7 @@
                             <td>
                                 <input class="custom-control-input" type="checkbox" data-toggle="toggle"
                                     data-onstyle="dark" data-size="small" name="permission[]"
-                                    value="{{ $permission[44]['id'] }}" false>{{ $permission[44]['name'] }}
+                                    value="" false>
                             </td>
                             <td>
                                 <input class="custom-control-input" type="checkbox" data-toggle="toggle"
