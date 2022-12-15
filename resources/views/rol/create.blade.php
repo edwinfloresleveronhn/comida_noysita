@@ -68,11 +68,6 @@
                             <td>
                                 <input class="custom-control-input" type="checkbox" data-toggle="toggle"
                                     data-onstyle="dark" data-size="small" name="permission[]"
-                                    value="{{ $permission[8]['id'] }}" false>{{ $permission[8]['name'] }}
-                            </td>
-                            <td>
-                                <input class="custom-control-input" type="checkbox" data-toggle="toggle"
-                                    data-onstyle="dark" data-size="small" name="permission[]"
                                     value="{{ $permission[9]['id'] }}" false>{{ $permission[9]['name'] }}
                             </td>
                             <td>
@@ -85,14 +80,14 @@
                                     data-onstyle="dark" data-size="small" name="permission[]"
                                     value="{{ $permission[11]['id'] }}" false>{{ $permission[11]['name'] }}
                             </td>
-                        </tr>
-                        <tr>
-                            <td>Clientes</td>
                             <td>
                                 <input class="custom-control-input" type="checkbox" data-toggle="toggle"
                                     data-onstyle="dark" data-size="small" name="permission[]"
-                                    value="{{ $permission[4]['id'] }}" false>{{ $permission[4]['name'] }}
+                                    value="{{ $permission[12]['id'] }}" false>{{ $permission[12]['name'] }}
                             </td>
+                        </tr>
+                        <tr>
+                            <td>Clientes</td>
                             <td>
                                 <input class="custom-control-input" type="checkbox" data-toggle="toggle"
                                     data-onstyle="dark" data-size="small" name="permission[]"
@@ -108,14 +103,14 @@
                                     data-onstyle="dark" data-size="small" name="permission[]"
                                     value="{{ $permission[7]['id'] }}" false>{{ $permission[7]['name'] }}
                             </td>
-                        </tr>
-                        <tr>
-                            <td>Proveedores</td>
                             <td>
                                 <input class="custom-control-input" type="checkbox" data-toggle="toggle"
                                     data-onstyle="dark" data-size="small" name="permission[]"
-                                    value="{{ $permission[12]['id'] }}" false>{{ $permission[12]['name'] }}
+                                    value="{{ $permission[8]['id'] }}" false>{{ $permission[8]['name'] }}
                             </td>
+                        </tr>
+                        <tr>
+                            <td>Proveedores</td>
                             <td>
                                 <input class="custom-control-input" type="checkbox" data-toggle="toggle"
                                     data-onstyle="dark" data-size="small" name="permission[]"
@@ -131,14 +126,14 @@
                                     data-onstyle="dark" data-size="small" name="permission[]"
                                     value="{{ $permission[15]['id'] }}" false>{{ $permission[15]['name'] }}
                             </td>
-                        </tr>
-                        <tr>
-                            <td>Compras</td>
                             <td>
                                 <input class="custom-control-input" type="checkbox" data-toggle="toggle"
                                     data-onstyle="dark" data-size="small" name="permission[]"
                                     value="{{ $permission[16]['id'] }}" false>{{ $permission[16]['name'] }}
                             </td>
+                        </tr>
+                        <tr>
+                            <td>Compras</td>
                             <td>
                                 <input class="custom-control-input" type="checkbox" data-toggle="toggle"
                                     data-onstyle="dark" data-size="small" name="permission[]"
@@ -154,14 +149,157 @@
                                     data-onstyle="dark" data-size="small" name="permission[]"
                                     value="{{ $permission[19]['id'] }}" false>{{ $permission[19]['name'] }}
                             </td>
-                        </tr>
-                        <tr>
-                            <td>Roles</td>
                             <td>
                                 <input class="custom-control-input" type="checkbox" data-toggle="toggle"
                                     data-onstyle="dark" data-size="small" name="permission[]"
-                                    value="{{ $permission[0]['id'] }}" false>{{ $permission[0]['name'] }}
+                                    value="{{ $permission[20]['id'] }}" false>{{ $permission[20]['name'] }}
                             </td>
+                        </tr>
+                        <tr>
+                            <td>Platillos</td>
+                            <td>
+                                <input class="custom-control-input" type="checkbox" data-toggle="toggle"
+                                    data-onstyle="dark" data-size="small" name="permission[]"
+                                    value="{{ $permission[21]['id'] }}" false>{{ $permission[21]['name'] }}
+                            </td>
+                            <td>
+                                <input class="custom-control-input" type="checkbox" data-toggle="toggle"
+                                    data-onstyle="dark" data-size="small" name="permission[]"
+                                    value="{{ $permission[22]['id'] }}" false>{{ $permission[22]['name'] }}
+                            </td>
+                            <td>
+                                <input class="custom-control-input" type="checkbox" data-toggle="toggle"
+                                    data-onstyle="dark" data-size="small" name="permission[]"
+                                    value="{{ $permission[23]['id'] }}" false>{{ $permission[23]['name'] }}
+                            </td>
+                            <td>
+                                <input class="custom-control-input" type="checkbox" data-toggle="toggle"
+                                    data-onstyle="dark" data-size="small" name="permission[]"
+                                    value="{{ $permission[24]['id'] }}" false>{{ $permission[24]['name'] }}
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Inventario</td>
+                            <td>
+                                <input class="custom-control-input" type="checkbox" data-toggle="toggle"
+                                    data-onstyle="dark" data-size="small" name="permission[]"
+                                    value="{{ $permission[25]['id'] }}" false>{{ $permission[25]['name'] }}
+                            </td>
+                            <td>
+                                <input class="custom-control-input" type="checkbox" data-toggle="toggle"
+                                    data-onstyle="dark" data-size="small" name="permission[]"
+                                    value="" false disabled>
+                            </td>
+                            <td>
+                                <input class="custom-control-input" type="checkbox" data-toggle="toggle"
+                                    data-onstyle="dark" data-size="small" name="permission[]"
+                                    value="{{ $permission[23]['id'] }}" false disabled>{{ $permission[23]['name'] }}
+                            </td>
+                            <td>
+                                <input class="custom-control-input" type="checkbox" data-toggle="toggle"
+                                    data-onstyle="dark" data-size="small" name="permission[]"
+                                    value="{{ $permission[24]['id'] }}" false disabled>{{ $permission[24]['name'] }}
+                            </td>
+                        </tr>
+                         
+                        <tr>
+                            <td>CAI</td>
+                            <td>
+                                <input class="custom-control-input" type="checkbox" data-toggle="toggle"
+                                    data-onstyle="dark" data-size="small" name="permission[]"
+                                    value="{{ $permission[29]['id'] }}" false>{{ $permission[29]['name'] }}
+                            </td>
+                            <td>
+                                <input class="custom-control-input" type="checkbox" data-toggle="toggle"
+                                    data-onstyle="dark" data-size="small" name="permission[]"
+                                    value="{{ $permission[30]['id'] }}" false>{{ $permission[30]['name'] }}
+                            </td>
+                            <td>
+                                <input class="custom-control-input" type="checkbox" data-toggle="toggle"
+                                    data-onstyle="dark" data-size="small" name="permission[]"
+                                    value="{{ $permission[31]['id'] }}" false>{{ $permission[31]['name'] }}
+                            </td>
+                            <td>
+                                <input class="custom-control-input" type="checkbox" data-toggle="toggle"
+                                    data-onstyle="dark" data-size="small" name="permission[]"
+                                    value="{{ $permission[32]['id'] }}" false>{{ $permission[32]['name'] }}
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Factura</td>
+                            <td>
+                                <input class="custom-control-input" type="checkbox" data-toggle="toggle"
+                                    data-onstyle="dark" data-size="small" name="permission[]"
+                                    value="{{ $permission[41]['id'] }}" false>{{ $permission[41]['name'] }}
+                            </td>
+                            <td>
+                                <input class="custom-control-input" type="checkbox" data-toggle="toggle"
+                                    data-onstyle="dark" data-size="small" name="permission[]"
+                                    value="{{ $permission[44]['id'] }}" false>{{ $permission[44]['name'] }}
+                            </td>
+                            <td>
+                                <input class="custom-control-input" type="checkbox" data-toggle="toggle"
+                                    data-onstyle="dark" data-size="small" name="permission[]"
+                                    value="{{ $permission[42]['id'] }}" false>{{ $permission[42]['name'] }}
+                            </td>
+                            <td>
+                                <input class="custom-control-input" type="checkbox" data-toggle="toggle"
+                                    data-onstyle="dark" data-size="small" name="permission[]"
+                                    value="{{ $permission[43]['id'] }}" false>{{ $permission[43]['name'] }}
+                            </td>
+                        </tr>
+
+                        <td>Logs</td>
+                            <td>
+                                <input class="custom-control-input" type="checkbox" data-toggle="toggle"
+                                    data-onstyle="dark" data-size="small" name="permission[]"
+                                    value="{{ $permission[33]['id'] }}" false>{{ $permission[33]['name'] }}
+                            </td>
+                            <td>
+                                <input class="custom-control-input" type="checkbox" data-toggle="toggle"
+                                    data-onstyle="dark" data-size="small" name="permission[]"
+                                    value="{{ $permission[30]['id'] }}" false disabled>{{ $permission[30]['name'] }}
+                            </td>
+                            <td>
+                                <input class="custom-control-input" type="checkbox" data-toggle="toggle"
+                                    data-onstyle="dark" data-size="small" name="permission[]"
+                                    value="{{ $permission[31]['id'] }}" false disabled>{{ $permission[31]['name'] }}
+                            </td>
+                            <td>
+                                <input class="custom-control-input" type="checkbox" data-toggle="toggle"
+                                    data-onstyle="dark" data-size="small" name="permission[]"
+                                    value="{{ $permission[32]['id'] }}" false disabled>{{ $permission[32]['name'] }}
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Usuarios</td>
+                            <td>
+                                <input class="custom-control-input" type="checkbox" data-toggle="toggle"
+                                    data-onstyle="dark" data-size="small" name="permission[]"
+                                    value="{{ $permission[34]['id'] }}" false>{{ $permission[34]['name'] }}
+                            </td>
+                            <td>
+                                <input class="custom-control-input" type="checkbox" data-toggle="toggle"
+                                    data-onstyle="dark" data-size="small" name="permission[]"
+                                    value="{{ $permission[35]['id'] }}" false>{{ $permission[35]['name'] }}
+                            </td>
+                            <td>
+                                <input class="custom-control-input" type="checkbox" data-toggle="toggle"
+                                    data-onstyle="dark" data-size="small" name="permission[]"
+                                    value="{{ $permission[36]['id'] }}" false>{{ $permission[36]['name'] }}
+                            </td>
+                            <td>
+                                <input class="custom-control-input" type="checkbox" data-toggle="toggle"
+                                    data-onstyle="dark" data-size="small" name="permission[]"
+                                    value="{{ $permission[37]['id'] }}" false>{{ $permission[37]['name'] }}
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Roles</td>
                             <td>
                                 <input class="custom-control-input" type="checkbox" data-toggle="toggle"
                                     data-onstyle="dark" data-size="small" name="permission[]"
@@ -176,6 +314,78 @@
                                 <input class="custom-control-input" type="checkbox" data-toggle="toggle"
                                     data-onstyle="dark" data-size="small" name="permission[]"
                                     value="{{ $permission[3]['id'] }}" false>{{ $permission[3]['name'] }}
+                            </td>
+                            <td>
+                                <input class="custom-control-input" type="checkbox" data-toggle="toggle"
+                                    data-onstyle="dark" data-size="small" name="permission[]"
+                                    value="{{ $permission[4]['id'] }}" false>{{ $permission[4]['name'] }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Bitacora</td>
+                            <td>
+                                <input class="custom-control-input" type="checkbox" data-toggle="toggle"
+                                    data-onstyle="dark" data-size="small" name="permission[]"
+                                    value="{{ $permission[38]['id'] }}" false>{{ $permission[38]['name'] }}
+                            </td>
+                            <td>
+                                <input class="custom-control-input" type="checkbox" data-toggle="toggle"
+                                    data-onstyle="dark" data-size="small" name="permission[]"
+                                    value="{{ $permission[35]['id'] }}" false disabled>{{ $permission[35]['name'] }}
+                            </td>
+                            <td>
+                                <input class="custom-control-input" type="checkbox" data-toggle="toggle"
+                                    data-onstyle="dark" data-size="small" name="permission[]"
+                                    value="{{ $permission[36]['id'] }}" false disabled>{{ $permission[36]['name'] }}
+                            </td>
+                            <td>
+                                <input class="custom-control-input" type="checkbox" data-toggle="toggle"
+                                    data-onstyle="dark" data-size="small" name="permission[]"
+                                    value="{{ $permission[37]['id'] }}" false disabled>{{ $permission[37]['name'] }}
+                            </td>
+                        </tr>
+                        <td>Reportes</td>
+                            <td>
+                                <input class="custom-control-input" type="checkbox" data-toggle="toggle"
+                                    data-onstyle="dark" data-size="small" name="permission[]"
+                                    value="{{ $permission[39]['id'] }}" false>{{ $permission[39]['name'] }}
+                            </td>
+                            <td>
+                                <input class="custom-control-input" type="checkbox" data-toggle="toggle"
+                                    data-onstyle="dark" data-size="small" name="permission[]"
+                                    value="{{ $permission[35]['id'] }}" false disabled>{{ $permission[35]['name'] }}
+                            </td>
+                            <td>
+                                <input class="custom-control-input" type="checkbox" data-toggle="toggle"
+                                    data-onstyle="dark" data-size="small" name="permission[]"
+                                    value="{{ $permission[36]['id'] }}" false disabled>{{ $permission[36]['name'] }}
+                            </td>
+                            <td>
+                                <input class="custom-control-input" type="checkbox" data-toggle="toggle"
+                                    data-onstyle="dark" data-size="small" name="permission[]"
+                                    value="{{ $permission[37]['id'] }}" false disabled>{{ $permission[37]['name'] }}
+                            </td>
+                        </tr>
+                        <td>Respaldo</td>
+                            <td>
+                                <input class="custom-control-input" type="checkbox" data-toggle="toggle"
+                                    data-onstyle="dark" data-size="small" name="permission[]"
+                                    value="{{ $permission[40]['id'] }}" false>{{ $permission[40]['name'] }}
+                            </td>
+                            <td>
+                                <input class="custom-control-input" type="checkbox" data-toggle="toggle"
+                                    data-onstyle="dark" data-size="small" name="permission[]"
+                                    value="{{ $permission[35]['id'] }}" false disabled>{{ $permission[35]['name'] }}
+                            </td>
+                            <td>
+                                <input class="custom-control-input" type="checkbox" data-toggle="toggle"
+                                    data-onstyle="dark" data-size="small" name="permission[]"
+                                    value="{{ $permission[36]['id'] }}" false disabled>{{ $permission[36]['name'] }}
+                            </td>
+                            <td>
+                                <input class="custom-control-input" type="checkbox" data-toggle="toggle"
+                                    data-onstyle="dark" data-size="small" name="permission[]"
+                                    value="{{ $permission[37]['id'] }}" false disabled>{{ $permission[37]['name'] }}
                             </td>
                         </tr>
                         
