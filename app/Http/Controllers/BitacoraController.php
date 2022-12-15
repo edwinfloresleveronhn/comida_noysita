@@ -9,6 +9,13 @@ use App\Models\bitacora;
 
 class BitacoraController extends Controller
 {
+
+    function __construct()
+    {
+        $this->middleware('permission:ver-bitacora' ,['only'=>['index']] );
+    
+
+    } 
     /**
      * Display a listing of the resource.
      *

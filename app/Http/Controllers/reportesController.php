@@ -12,6 +12,12 @@ use Maatwebsite\Excel\Facades\Excel;
 
 class reportesController extends Controller
 {
+    function __construct()
+    {
+        $this->middleware('permission:ver-reporte' ,['only'=>['index']] );
+
+    } 
+
     public function index()
     {
         return view('reportes.index');

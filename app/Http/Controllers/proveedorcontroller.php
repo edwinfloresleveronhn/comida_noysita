@@ -11,6 +11,16 @@ use Illuminate\Support\Facades\Http;
 
 class proveedorcontroller extends Controller
 {
+
+
+    function __construct()
+    {
+        $this->middleware('permission:ver-proveedor' ,['only'=>['index']] );
+        $this->middleware('permission:crear-proveedor' ,['only'=>['create', 'store']] );
+        $this->middleware('permission:editar-proveedor' ,['only'=>['edit', 'update']] );
+        $this->middleware('permission:borrar-proveedor' ,['only'=>['destroy']] );
+
+    }   
     /**
      * Display a listing of the resource.
      *

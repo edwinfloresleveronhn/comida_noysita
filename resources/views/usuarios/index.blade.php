@@ -15,12 +15,14 @@
     <div class="card-body">
       @csrf
       <div class="card-content">
+        @can('crear-usuario')
         <a class="btn btn-success float-right" href="{{ route('usuarios.create') }}">
           <i class="fas fa-plus"></i>
           Nuevo Usuario
         </a>
         <br>
         <br>
+        @endcan
       </div>
       <table id="usuarios" class="display responsive nowrap" style="width:100%">
         <thead>
@@ -40,23 +42,27 @@
             <td>{{$usuario->email}}</td>
             <td>
               @if(!empty($usuario->getRoleNames()))
-                @foreach($usuario->getRoleNames() as $rolName)
+              @foreach($usuario->getRoleNames() as $rolName)
               <h5><span class="badge badge-success">{{$rolName}}</span></h5>
               @endforeach
               @endif
             </td>
             <td width='10px'>
               <form action="{{route('usuarios.destroy',$usuario->id)}}" method="POST" class="eliminar_empleados">
+              @can('editar-usuario')
                 <a class="btn btn-warning " href="{{route('usuarios.edit', $usuario->id)}}">
                   <i class="far fa-edit">
                   </i>
                 </a>
+                @endcan
                 @csrf
                 @method('DELETE')
+                @can('borrar-usuario')
                 <button class="btn btn-danger">
                   <i class="fas fa-trash-alt">
                   </i>
                 </button>
+                @endcan
               </form>
 
             </td>
@@ -103,7 +109,7 @@
 
 
 <script>
-  $(document).ready(function() {
+  $(document).ready(function () {
     $('#usuarios').DataTable({
       dom: 'Bfrtip',
       buttons: [
@@ -114,7 +120,7 @@
 </script>
 
 <script>
-  @if(Session::has('agregado'))
+  @if (Session:: has('agregado'))
   toastr.options = {
     "closeButton": false,
     "progressBar": true,
@@ -126,7 +132,7 @@
 </script>
 
 <script>
-  @if(Session::has('eliminado'))
+  @if (Session:: has('eliminado'))
   toastr.options = {
     "closeButton": false,
     "progressBar": true,
@@ -138,7 +144,7 @@
 </script>
 
 <script>
-  @if(Session::has('editado'))
+  @if (Session:: has('editado'))
   toastr.options = {
     "closeButton": false,
     "progressBar": true,
@@ -150,7 +156,7 @@
 </script>
 
 <script>
-  $('.eliminar_empleados').submit(function(e) {
+  $('.eliminar_empleados').submit(function (e) {
     e.preventDefault();
 
     Swal.fire({

@@ -15,12 +15,14 @@
             <div class="card-body">
                 @csrf
                 <div class="card-content">
+                @can('crear-proveedor')
                     <a class="btn btn-success float-right" href="{{ route('proveedor.create') }}">
                         <i class="fas fa-plus"></i>
                         Nuevo Proveedor
                         </a>
                         <br>
                         <br>
+                        @endcan
                 </div>
                 <table id="proveedores" class="display responsive nowrap" style="width:100%">
                     <thead>
@@ -46,17 +48,21 @@
                                 <td>{{$proveedor['OBSERVACION']}}</td>
                                     <td width='10px'>
                                         <form action="{{route('proveedor.destroy' ,$proveedor['COD_PROVEEDOR'])}}" method="POST" class="eliminar_proveedor">
+                                        @can('crear-proveedor')
                                         <a class="btn btn-warning " 
                                         href="{{route('proveedor.edit', $proveedor['COD_PROVEEDOR'])}}">
                                                 <i class="far fa-edit">
                                                 </i>
                                             </a>
+                                            @endcan
                                             @csrf
                                             @method('DELETE')
+                                            @can('borrar-proveedor')
                                             <button class="btn btn-danger">
                                                     <i class="fas fa-trash-alt">
                                                     </i>
                                                 </button>
+                                                @endcan
                                         </form>
                                        
                                     </td>

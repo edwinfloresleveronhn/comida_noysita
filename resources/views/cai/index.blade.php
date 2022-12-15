@@ -15,12 +15,14 @@
             <div class="card-body">
                 @csrf
                 <div class="card-content">
+                @can('crear-cai')
                     <a class="btn btn-success float-right" href="{{ route('cai.create') }}">
                         <i class="fas fa-plus"></i>
                         Generar nuevo CAI
                         </a>
                         <br>
                         <br>
+                        @endcan
                 </div>
                 <table id="CAI" class="display responsive nowrap" style="width:100%">
                     <thead>
@@ -42,11 +44,13 @@
                                 <td>{{$CAI ['FECHA_VENCIMIENTO']}}</td>
                                 <td width='10px'>
                                     <form >
+                                    @can('editar-cai')
                                         <a class="btn btn-warning " 
                                         href="{{route('cai.edit', $CAI['COD_CAI'])}}">
                                                 <i class="far fa-edit">
                                                 </i>
                                             </a>
+                                            @endcan
                                             @csrf
                                         </form>
                                        

@@ -11,6 +11,15 @@ use App\Models\inventario;
 
 class inventariocontroller extends Controller
 {
+
+    function __construct()
+    {
+        $this->middleware('permission:ver-inventario' ,['only'=>['index']] );
+        $this->middleware('permission:crear-inventario' ,['only'=>['create', 'store']] );
+        $this->middleware('permission:editar-inventario' ,['only'=>['edit', 'update']] );
+        $this->middleware('permission:borrar-inventario' ,['only'=>['destroy']] );
+
+    } 
     /**
      * Display a listing of the resource.
      *

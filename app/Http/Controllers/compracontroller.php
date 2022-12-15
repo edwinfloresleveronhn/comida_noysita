@@ -13,6 +13,15 @@ use Illuminate\Support\Facades\Http;
 
 class compracontroller extends Controller
 {
+
+    function __construct()
+    {
+        $this->middleware('permission:ver-compra' ,['only'=>['index']] );
+        $this->middleware('permission:crear-compra' ,['only'=>['create', 'store']] );
+        $this->middleware('permission:editar-compra' ,['only'=>['edit', 'update']] );
+        $this->middleware('permission:borrar-compra' ,['only'=>['destroy']] );
+
+    } 
     /**
      * Display a listing of the resource.
      *

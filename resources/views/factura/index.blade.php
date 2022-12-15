@@ -15,12 +15,14 @@
         <div class="card-body">
             @csrf
             <div class="card-content">
+            @can('crear-factura')
                 <a class="btn btn-success float-right" href="{{ route('factura.create') }}">
                     <i class="fas fa-plus"></i>
                     Crear nueva Factura
                 </a>
                 <br>
                 <br>
+                @endcan
             </div>
             <table id="facturas" class="display responsive nowrap" style="width:100%">
                 <thead>
@@ -54,18 +56,17 @@
                         <td>{{$factura ['TOTAL_FACTURA']}}</td>
                         <td width='10px'>
                             <form>
+                            @can('editar-factura')
                                 <a class="btn btn-warning " href="{{route('factura.edit', $factura['COD_FACTURA'])}}">
                                     <i class="far fa-edit">
                                     </i>
                                 </a>
+                                @endcan
                                 @csrf
                                 <a class="btn btn-danger " href="{{route('factura.show', $factura['COD_FACTURA'])}}">
                                     <i class="fas fa-print"></i>
                                 </a>
                                 @csrf
-
-
-
                             </form>
 
                         </td>

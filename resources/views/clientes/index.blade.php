@@ -15,13 +15,14 @@
         <div class="card-body">
             @csrf
             <div class="card-content">
+            @can('crear-cliente')
                 <a class="btn btn-success float-right" href="{{ route('clientes.create') }}">
                     <i class="fas fa-plus"></i>
                     Nuevo Cliente
                 </a>
                 <br>
                 <br>
-
+            @endcan
 
             </div>
             <table id="clientes" class="display responsive nowrap" style="width:100%">
@@ -48,16 +49,20 @@
                         <td>{{$cliente['FECHA_INGRESO_CLIENTE']}}</td>
                         <td width='10px'>
                             <form action="{{route('clientes.destroy' ,$cliente['COD_CLIENTE'])}}" method="POST" class="eliminar_cliente">
-                                <a class="btn btn-warning " href="{{route('clientes.edit', $cliente['COD_CLIENTE'])}}">
+                            @can('editar-cliente')
+                            <a class="btn btn-warning " href="{{route('clientes.edit', $cliente['COD_CLIENTE'])}}">
                                     <i class="far fa-edit">
                                     </i>
                                 </a>
+                            @endcan
                                 @csrf
                                 @method('DELETE')
+                                @can('borrar-cliente')
                                 <button class="btn btn-danger">
                                     <i class="fas fa-trash-alt">
                                     </i>
                                 </button>
+                                @endcan
                             </form>
 
                         </td>

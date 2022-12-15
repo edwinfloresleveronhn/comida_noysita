@@ -6,6 +6,12 @@ use Illuminate\Http\Request;
 
 class respaldoController extends Controller
 {
+
+    function __construct()
+    {
+        $this->middleware('permission:ver-respaldo' ,['only'=>['index']] );
+       
+    } 
     /**
      * Display a listing of the resource.
      *

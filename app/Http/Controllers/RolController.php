@@ -44,7 +44,10 @@ class RolController extends Controller
     public function create()
     {
         $permission = Permission::get();
+        
         return view('rol.create', compact('permission'));
+
+     
     }
 
     /**
@@ -56,7 +59,7 @@ class RolController extends Controller
     public function store(Request $request)
     {
 
-        $this->validate($request, ['name'=> 'required', 'permission' => 'required']);
+        $this->validate($request, ['name'=> 'required'/* , 'permission' => 'required' */]);
         $role = Role::create(['name'=>$request->input('name')]);
         $role->syncPermissions($request->permission);
 

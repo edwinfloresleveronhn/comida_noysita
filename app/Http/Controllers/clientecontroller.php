@@ -11,6 +11,16 @@ use Illuminate\Support\Facades\Http;
 
 class clientecontroller extends Controller
 {
+
+    function __construct()
+    {
+        $this->middleware('permission:ver-cliente' ,['only'=>['index']] );
+        $this->middleware('permission:crear-cliente' ,['only'=>['create', 'store']] );
+        $this->middleware('permission:editar-cliente' ,['only'=>['edit', 'update']] );
+        $this->middleware('permission:borrar-cliente' ,['only'=>['destroy']] );
+
+    } 
+
     /**
      * Display a listing of the resource.
      *

@@ -15,12 +15,14 @@
             <div class="card-body">
                 @csrf
                 <div class="card-content">
+                @can('crear-compra')
                     <a class="btn btn-success float-right" href="{{ route('compra.create') }}">
                         <i class="fas fa-plus"></i>
                         Nueva Compra
                         </a>
                         <br>
                         <br>
+                        @endcan
                 </div>
                 <table id="compras" class="display responsive nowrap" style="width:100%">
                     <thead>
@@ -44,17 +46,21 @@
                                 <td>{{$compra['FECHA_COMPRA']}}</td>
                                 <td width='10px'>
                                     <form action="{{route('compra.destroy' ,$compra['COD_COMPRA'])}}" method="POST" class="eliminar_compra">
-                                        <a class="btn btn-warning " 
+                                    @can('editar-compra')
+                                    <a class="btn btn-warning " 
                                         href="{{route('compra.edit', $compra['COD_COMPRA'])}}">
                                                 <i class="far fa-edit">
                                                 </i>
                                             </a>
+                                            @endcan
                                             @csrf
                                             @method('DELETE')
+                                            @can('borrar-compra')
                                             <button class="btn btn-danger">
                                                     <i class="fas fa-trash-alt">
                                                     </i>
                                                 </button>
+                                                @endcan
                                     </form>
                                        
                                 </td>

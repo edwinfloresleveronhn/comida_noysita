@@ -10,6 +10,15 @@ use Illuminate\Support\Facades\Http;
 
 class caicontroller extends Controller
 {
+
+    function __construct()
+    {
+        $this->middleware('permission:ver-cai' ,['only'=>['index']] );
+        $this->middleware('permission:crear-cai' ,['only'=>['create', 'store']] );
+        $this->middleware('permission:editar-cai' ,['only'=>['edit', 'update']] );
+        $this->middleware('permission:borrar-cai' ,['only'=>['destroy']] );
+
+    } 
     /**
      * Display a listing of the resource.
      *

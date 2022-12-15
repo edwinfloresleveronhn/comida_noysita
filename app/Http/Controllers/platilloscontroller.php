@@ -10,6 +10,15 @@ use App\Models\platillo;
 
 class platilloscontroller extends Controller
 {
+
+    function __construct()
+    {
+        $this->middleware('permission:ver-catalogo' ,['only'=>['index']] );
+        $this->middleware('permission:crear-catalogo' ,['only'=>['create', 'store']] );
+        $this->middleware('permission:editar-catalogo' ,['only'=>['edit', 'update']] );
+        $this->middleware('permission:borrar-catalogo' ,['only'=>['destroy']] );
+
+    } 
     /**
      * Display a listing of the resource.
      *

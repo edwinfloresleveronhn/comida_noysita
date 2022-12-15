@@ -309,6 +309,7 @@ return [
         [
             'text'    => ' Empleados',
             'icon' => 'fas fa-id-card',
+            'can' => 'ver-empleado',
             
             'submenu' => [
                 [
@@ -321,11 +322,13 @@ return [
         [
             'text'    => ' Clientes',
             'icon' => 'fas fa-fw fa-user',
+            'can' => 'ver-cliente',
             
             'submenu' => [
                 [
                     'text' => 'Gestion de Cliente',
-                    'route'  => 'clientes.index',                
+                    'route'  => 'clientes.index', 
+
                 ],
             ],
         ],
@@ -338,18 +341,22 @@ return [
                 [
                     'text' => ' Proveedores',
                     'route'  => 'proveedor.index',
+                    'can' => 'ver-proveedor',
                 ],
                 [
                     'text' => 'Compra de Producto',
                     'route'  => 'compra.index',
+                    'can' => 'ver-compra',
                 ],
                 [
                     'text' => 'Catalogo de Platillos',
                     'route'  => 'platillos.index',
+                    'can' => 'ver-catalogo',
                 ],
                 [
                     'text' => 'Inventario',
                     'route'  => 'inventario.index',
+                    'can' => 'ver-inventario',
                 ],
             ],
         ],
@@ -357,6 +364,7 @@ return [
         [
             'text'    => ' Gestion de factura',
             'icon' => 'fas fa-folder',
+            'can' => 'ver-cai',
             
             'submenu' => [
                 [
@@ -369,6 +377,7 @@ return [
          [
             'text'    => ' Facturacion ',
             'icon' => 'fas fa-fw fa-file',
+            'can' => 'ver-factura',
             
             'submenu' => [
                 [
@@ -384,6 +393,7 @@ return [
         [
             'text'    => ' seguridad',
             'icon' => 'fas fa-shield-alt',
+            'can' => 'ver-logs',
             
             'submenu' => [
                 [
@@ -400,6 +410,7 @@ return [
                 [
                     'text' => 'Usuarios',
                     'route'  => 'usuarios.index',
+                    'can' => 'ver-usuario',
                 ],
                 
                 [
@@ -410,6 +421,7 @@ return [
                 [
                     'text' => 'bitacora',
                     'route'  => 'bitacora.index',
+                    'can' => 'ver-bitacora',
                 ],
             ],
             
@@ -417,6 +429,7 @@ return [
         [
             'text'    => ' Reportes',
             'icon' => 'fas fa-bullhorn',
+            'can' => 'ver-reporte',
             
             'submenu' => [
                 [
@@ -433,6 +446,7 @@ return [
        [
            'text'    => ' Respaldo ',
            'icon' => 'fas fa-download',
+           'can' => 'ver-bitacora',
            
            'submenu' => [
                [

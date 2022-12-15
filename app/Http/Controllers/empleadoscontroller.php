@@ -12,6 +12,15 @@ use Illuminate\Support\Facades\Http;
 
 class empleadoscontroller extends Controller
 {
+
+    function __construct()
+    {
+        $this->middleware('permission:ver-empleado' ,['only'=>['index']] );
+        $this->middleware('permission:ver-empleado' ,['only'=>['create', 'store']] );
+        $this->middleware('permission:ver-empleado' ,['only'=>['edit', 'update']] );
+        $this->middleware('permission:ver-empleado' ,['only'=>['destroy']] );
+
+    }   
     /**
      * Display a listing of the resource.
      *

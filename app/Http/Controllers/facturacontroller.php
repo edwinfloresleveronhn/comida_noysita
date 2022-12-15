@@ -11,6 +11,15 @@ use Illuminate\Support\Facades\Http;
 
 class facturacontroller extends Controller
 {
+
+    function __construct()
+    {
+        $this->middleware('permission:ver-factura' ,['only'=>['index']] );
+        $this->middleware('permission:crear-factura' ,['only'=>['create', 'store']] );
+        $this->middleware('permission:editar-factura' ,['only'=>['edit', 'update']] );
+        $this->middleware('permission:borrar-factura' ,['only'=>['destroy']] );
+
+    } 
     /**
      * Display a listing of the resource.
      *

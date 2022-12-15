@@ -15,12 +15,14 @@
             <div class="card-body">
                 @csrf
                 <div class="card-content">
+                @can('crear-catalogo')
                     <a class="btn btn-success float-right" href="{{ route('platillos.create') }}">
                         <i class="fas fa-plus"></i>
                         Nuevo Platillo
                         </a>
                         <br>
                         <br>
+                        @endcan
                 </div>
                 <table id="platillos" class="display responsive nowrap" style="width:100%">
                     <thead>
@@ -40,17 +42,21 @@
                                 <td>{{$platillo['RECETA_PLATILLO']}}</td>
                                 <td width='10px'>
                                 <form action="{{route('platillos.destroy' ,$platillo['COD_PLATILLO'])}}" method="POST" class="eliminar_platillo">
+                                @can('editar-catalogo')
                                 <a class="btn btn-warning " 
                                 href="{{route('platillos.edit', $platillo['COD_PLATILLO'])}}">
                                         <i class="far fa-edit">
                                         </i>
                                     </a>
+                                    @endcan
                                     @csrf
                                     @method('DELETE')
+                                    @can('borrar-catalogo')
                                     <button class="btn btn-danger">
                                             <i class="fas fa-trash-alt">
                                             </i>
                                         </button>
+                                        @endcan
                                 </form>
                                
                                 </td>

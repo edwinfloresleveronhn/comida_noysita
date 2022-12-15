@@ -6,6 +6,12 @@ use Illuminate\Http\Request;
 
 class logscontroller extends Controller
 {
+
+    function __construct()
+    {
+        $this->middleware('permission:ver-logs' ,['only'=>['index']] );
+        
+    } 
     /**
      * Display a listing of the resource.
      *
