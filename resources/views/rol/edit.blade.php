@@ -30,7 +30,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+     <!--        <div class="row">
                 <div class="col-6">
                     <div class="form-group">
                         <label for="permission">Permisos</label>
@@ -49,7 +49,7 @@
                         @enderror
                     </div>
                 </div>
-            </div>
+            </div> -->
 
             <table id="roles" class="display responsive nowrap" style="width:100%">
                 <thead>
@@ -65,35 +65,33 @@
                     <tr>
                         <td>Empleados</td>
                         <td>
-                     
 
                             <input class="custom-control-input" data-toggle="toggle" data-onstyle="dark"
                                 data-size="small" name="permission[]" type="checkbox" name="permission[]"
                                 value="<?php echo $permission[8]['id']; ?>" <?php if(in_array($permission[8]['id'] ,
                                 $rolePermission)) echo 'checked'; ?>>
-                            <?php echo $permission[8]['name']; ?>
-
+                            
                         </td>
                         <td>
                         <input class="custom-control-input" data-toggle="toggle" data-onstyle="dark"
                                 data-size="small" name="permission[]" type="checkbox" name="permission[]"
                                 value="<?php echo $permission[9]['id']; ?>" <?php if(in_array($permission[9]['id'] ,
                                 $rolePermission)) echo 'checked'; ?>>
-                            <?php echo $permission[9]['name']; ?>
+                            
                         </td>
                         <td>
                         <input class="custom-control-input" data-toggle="toggle" data-onstyle="dark"
                                 data-size="small" name="permission[]" type="checkbox" name="permission[]"
                                 value="<?php echo $permission[10]['id']; ?>" <?php if(in_array($permission[10]['id'] ,
                                 $rolePermission)) echo 'checked'; ?>>
-                            <?php echo $permission[10]['name']; ?>
+                            
                         </td>
                         <td>
                         <input class="custom-control-input" data-toggle="toggle" data-onstyle="dark"
                                 data-size="small" name="permission[]" type="checkbox" name="permission[]"
                                 value="<?php echo $permission[11]['id']; ?>" <?php if(in_array($permission[11]['id'] ,
                                 $rolePermission)) echo 'checked'; ?>>
-                            <?php echo $permission[11]['name']; ?>
+                           
                         </td>
                     </tr>
                     <tr>
@@ -103,28 +101,28 @@
                                 data-size="small" name="permission[]" type="checkbox" name="permission[]"
                                 value="<?php echo $permission[4]['id']; ?>" <?php if(in_array($permission[4]['id'] ,
                                 $rolePermission)) echo 'checked'; ?>>
-                            <?php echo $permission[4]['name']; ?>
+                           
                         </td>
                         <td>
                         <input class="custom-control-input" data-toggle="toggle" data-onstyle="dark"
                                 data-size="small" name="permission[]" type="checkbox" name="permission[]"
                                 value="<?php echo $permission[5]['id']; ?>" <?php if(in_array($permission[5]['id'] ,
                                 $rolePermission)) echo 'checked'; ?>>
-                            <?php echo $permission[5]['name']; ?>
+                            
                         </td>
                         <td>
                         <input class="custom-control-input" data-toggle="toggle" data-onstyle="dark"
                                 data-size="small" name="permission[]" type="checkbox" name="permission[]"
                                 value="<?php echo $permission[6]['id']; ?>" <?php if(in_array($permission[6]['id'] ,
                                 $rolePermission)) echo 'checked'; ?>>
-                            <?php echo $permission[6]['name']; ?>
+                           
                         </td>
                         <td>
                         <input class="custom-control-input" data-toggle="toggle" data-onstyle="dark"
                                 data-size="small" name="permission[]" type="checkbox" name="permission[]"
                                 value="<?php echo $permission[7]['id']; ?>" <?php if(in_array($permission[7]['id'] ,
                                 $rolePermission)) echo 'checked'; ?>>
-                            <?php echo $permission[7]['name']; ?>
+                            
                         </td>
                     </tr>
                     <tr>
@@ -134,28 +132,28 @@
                                 data-size="small" name="permission[]" type="checkbox" name="permission[]"
                                 value="<?php echo $permission[12]['id']; ?>" <?php if(in_array($permission[12]['id'] ,
                                 $rolePermission)) echo 'checked'; ?>>
-                            <?php echo $permission[12]['name']; ?>
+                            
                         </td>
                         <td>
                         <input class="custom-control-input" data-toggle="toggle" data-onstyle="dark"
                                 data-size="small" name="permission[]" type="checkbox" name="permission[]"
                                 value="<?php echo $permission[13]['id']; ?>" <?php if(in_array($permission[13]['id'] ,
                                 $rolePermission)) echo 'checked'; ?>>
-                            <?php echo $permission[13]['name']; ?>
+                            
                         </td>
                         <td>
                         <input class="custom-control-input" data-toggle="toggle" data-onstyle="dark"
                                 data-size="small" name="permission[]" type="checkbox" name="permission[]"
                                 value="<?php echo $permission[14]['id']; ?>" <?php if(in_array($permission[14]['id'] ,
                                 $rolePermission)) echo 'checked'; ?>>
-                            <?php echo $permission[14]['name']; ?>
+                            
                         </td>
                         <td>
                         <input class="custom-control-input" data-toggle="toggle" data-onstyle="dark"
                                 data-size="small" name="permission[]" type="checkbox" name="permission[]"
                                 value="<?php echo $permission[15]['id']; ?>" <?php if(in_array($permission[15]['id'] ,
                                 $rolePermission)) echo 'checked'; ?>>
-                            <?php echo $permission[15]['name']; ?>
+                           
                         </td>
                     </tr>
                     <tr>
@@ -165,28 +163,28 @@
                                 data-size="small" name="permission[]" type="checkbox" name="permission[]"
                                 value="<?php echo $permission[16]['id']; ?>" <?php if(in_array($permission[16]['id'] ,
                                 $rolePermission)) echo 'checked'; ?>>
-                            <?php echo $permission[16]['name']; ?>
+                            
                         </td>
                         <td>
                         <input class="custom-control-input" data-toggle="toggle" data-onstyle="dark"
                                 data-size="small" name="permission[]" type="checkbox" name="permission[]"
                                 value="<?php echo $permission[17]['id']; ?>" <?php if(in_array($permission[17]['id'] ,
                                 $rolePermission)) echo 'checked'; ?>>
-                            <?php echo $permission[17]['name']; ?>
+                            
                         </td>
                         <td>
                         <input class="custom-control-input" data-toggle="toggle" data-onstyle="dark"
                                 data-size="small" name="permission[]" type="checkbox" name="permission[]"
                                 value="<?php echo $permission[18]['id']; ?>" <?php if(in_array($permission[18]['id'] ,
                                 $rolePermission)) echo 'checked'; ?>>
-                            <?php echo $permission[18]['name']; ?>
+                            
                         </td>
                         <td>
                         <input class="custom-control-input" data-toggle="toggle" data-onstyle="dark"
                                 data-size="small" name="permission[]" type="checkbox" name="permission[]"
                                 value="<?php echo $permission[19]['id']; ?>" <?php if(in_array($permission[19]['id'] ,
                                 $rolePermission)) echo 'checked'; ?>>
-                            <?php echo $permission[19]['name']; ?>
+                            
                         </td>
                     </tr>
                     <tr>
@@ -196,28 +194,28 @@
                                 data-size="small" name="permission[]" type="checkbox" name="permission[]"
                                 value="<?php echo $permission[20]['id']; ?>" <?php if(in_array($permission[20]['id'] ,
                                 $rolePermission)) echo 'checked'; ?>>
-                            <?php echo $permission[20]['name']; ?>
+                            
                         </td>
                         <td>
                              <input class="custom-control-input" data-toggle="toggle" data-onstyle="dark"
                                 data-size="small" name="permission[]" type="checkbox" name="permission[]"
                                 value="<?php echo $permission[21]['id']; ?>" <?php if(in_array($permission[21]['id'] ,
                                 $rolePermission)) echo 'checked'; ?>>
-                            <?php echo $permission[21]['name']; ?>
+                            
                         </td>
                         <td>
                         <input class="custom-control-input" data-toggle="toggle" data-onstyle="dark"
                                 data-size="small" name="permission[]" type="checkbox" name="permission[]"
                                 value="<?php echo $permission[22]['id']; ?>" <?php if(in_array($permission[22]['id'] ,
                                 $rolePermission)) echo 'checked'; ?>>
-                            <?php echo $permission[22]['name']; ?>
+                            
                         </td>
                         <td>
                         <input class="custom-control-input" data-toggle="toggle" data-onstyle="dark"
                                 data-size="small" name="permission[]" type="checkbox" name="permission[]"
                                 value="<?php echo $permission[23]['id']; ?>" <?php if(in_array($permission[23]['id'] ,
                                 $rolePermission)) echo 'checked'; ?>>
-                            <?php echo $permission[23]['name']; ?>
+                           
                         </td>
                     </tr>
 
@@ -228,7 +226,7 @@
                                 data-size="small" name="permission[]" type="checkbox" name="permission[]"
                                 value="<?php echo $permission[25]['id']; ?>" <?php if(in_array($permission[25]['id'] ,
                                 $rolePermission)) echo 'checked'; ?>>
-                            <?php echo $permission[25]['name']; ?>
+                            
                         </td>
                         <td>
                             <input class="custom-control-input" type="checkbox" data-toggle="toggle" data-onstyle="dark"
@@ -253,28 +251,28 @@
                                 data-size="small" name="permission[]" type="checkbox" name="permission[]"
                                 value="<?php echo $permission[28]['id']; ?>" <?php if(in_array($permission[28]['id'] ,
                                 $rolePermission)) echo 'checked'; ?>>
-                            <?php echo $permission[28]['name']; ?>
+                            
                         </td>
                         <td>
                         <input class="custom-control-input" data-toggle="toggle" data-onstyle="dark"
                                 data-size="small" name="permission[]" type="checkbox" name="permission[]"
                                 value="<?php echo $permission[29]['id']; ?>" <?php if(in_array($permission[29]['id'] ,
                                 $rolePermission)) echo 'checked'; ?>>
-                            <?php echo $permission[29]['name']; ?>
+                            
                         </td>
                         <td>
-                            < <input class="custom-control-input" data-toggle="toggle" data-onstyle="dark"
+                            <input class="custom-control-input" data-toggle="toggle" data-onstyle="dark"
                                 data-size="small" name="permission[]" type="checkbox" name="permission[]"
                                 value="<?php echo $permission[30]['id']; ?>" <?php if(in_array($permission[30]['id'] ,
                                 $rolePermission)) echo 'checked'; ?>>
-                            <?php echo $permission[30]['name']; ?>
+                            
                         </td>
                         <td>
                         <input class="custom-control-input" data-toggle="toggle" data-onstyle="dark"
                                 data-size="small" name="permission[]" type="checkbox" name="permission[]"
                                 value="<?php echo $permission[31]['id']; ?>" <?php if(in_array($permission[31]['id'] ,
                                 $rolePermission)) echo 'checked'; ?>>
-                            <?php echo $permission[31]['name']; ?>
+                            
                         </td>
                     </tr>
 
@@ -285,14 +283,14 @@
                                 data-size="small" name="permission[]" type="checkbox" name="permission[]"
                                 value="<?php echo $permission[40]['id']; ?>" <?php if(in_array($permission[40]['id'] ,
                                 $rolePermission)) echo 'checked'; ?>>
-                            <?php echo $permission[40]['name']; ?>
+                            
                         </td>
                         <td>
                         <input class="custom-control-input" data-toggle="toggle" data-onstyle="dark"
                                 data-size="small" name="permission[]" type="checkbox" name="permission[]"
                                 value="<?php echo $permission[43]['id']; ?>" <?php if(in_array($permission[43]['id'] ,
                                 $rolePermission)) echo 'checked'; ?>>
-                            <?php echo $permission[43]['name']; ?>
+                            
                         </td>
                         <td>
                         <input class="custom-control-input" data-toggle="toggle" data-onstyle="dark"
@@ -306,7 +304,7 @@
                                 data-size="small" name="permission[]" type="checkbox" name="permission[]"
                                 value="<?php echo $permission[42]['id']; ?>" <?php if(in_array($permission[42]['id'] ,
                                 $rolePermission)) echo 'checked'; ?>>
-                            <?php echo $permission[42]['name']; ?>
+                           
                         </td>
                     </tr>
 
@@ -316,7 +314,7 @@
                                 data-size="small" name="permission[]" type="checkbox" name="permission[]"
                                 value="<?php echo $permission[32]['id']; ?>" <?php if(in_array($permission[32]['id'] ,
                                 $rolePermission)) echo 'checked'; ?>>
-                            <?php echo $permission[32]['name']; ?>
+                            
                     </td>
                     <td>
                         <input class="custom-control-input" type="checkbox" data-toggle="toggle" data-onstyle="dark"
@@ -339,28 +337,27 @@
                                 data-size="small" name="permission[]" type="checkbox" name="permission[]"
                                 value="<?php echo $permission[33]['id']; ?>" <?php if(in_array($permission[33]['id'] ,
                                 $rolePermission)) echo 'checked'; ?>>
-                            <?php echo $permission[33]['name']; ?>
+                            
                         </td>
                         <td>
                         <input class="custom-control-input" data-toggle="toggle" data-onstyle="dark"
                                 data-size="small" name="permission[]" type="checkbox" name="permission[]"
                                 value="<?php echo $permission[34]['id']; ?>" <?php if(in_array($permission[34]['id'] ,
                                 $rolePermission)) echo 'checked'; ?>>
-                            <?php echo $permission[34]['name']; ?>
                         </td>
                         <td>
                         <input class="custom-control-input" data-toggle="toggle" data-onstyle="dark"
                                 data-size="small" name="permission[]" type="checkbox" name="permission[]"
                                 value="<?php echo $permission[35]['id']; ?>" <?php if(in_array($permission[35]['id'] ,
                                 $rolePermission)) echo 'checked'; ?>>
-                            <?php echo $permission[35]['name']; ?>
+                          
                         </td>
                         <td>
                         <input class="custom-control-input" data-toggle="toggle" data-onstyle="dark"
                                 data-size="small" name="permission[]" type="checkbox" name="permission[]"
                                 value="<?php echo $permission[36]['id']; ?>" <?php if(in_array($permission[36]['id'] ,
                                 $rolePermission)) echo 'checked'; ?>>
-                            <?php echo $permission[36]['name']; ?>
+                            
                         </td>
                     </tr>
 
@@ -371,28 +368,28 @@
                                 data-size="small" name="permission[]" type="checkbox" name="permission[]"
                                 value="<?php echo $permission[0]['id']; ?>" <?php if(in_array($permission[0]['id'] ,
                                 $rolePermission)) echo 'checked'; ?>>
-                            <?php echo $permission[0]['name']; ?>
+                            
                         </td>
                         <td>
                         <input class="custom-control-input" data-toggle="toggle" data-onstyle="dark"
                                 data-size="small" name="permission[]" type="checkbox" name="permission[]"
                                 value="<?php echo $permission[1]['id']; ?>" <?php if(in_array($permission[1]['id'] ,
                                 $rolePermission)) echo 'checked'; ?>>
-                            <?php echo $permission[1]['name']; ?>
+                            
                         </td>
                         <td>
                         <input class="custom-control-input" data-toggle="toggle" data-onstyle="dark"
                                 data-size="small" name="permission[]" type="checkbox" name="permission[]"
                                 value="<?php echo $permission[2]['id']; ?>" <?php if(in_array($permission[2]['id'] ,
                                 $rolePermission)) echo 'checked'; ?>>
-                            <?php echo $permission[2]['name']; ?>
+                            
                         </td>
                         <td>
                         <input class="custom-control-input" data-toggle="toggle" data-onstyle="dark"
                                 data-size="small" name="permission[]" type="checkbox" name="permission[]"
                                 value="<?php echo $permission[3]['id']; ?>" <?php if(in_array($permission[3]['id'] ,
                                 $rolePermission)) echo 'checked'; ?>>
-                            <?php echo $permission[3]['name']; ?>
+                            
                         </td>
                     </tr>
                     <tr>
@@ -402,7 +399,7 @@
                                 data-size="small" name="permission[]" type="checkbox" name="permission[]"
                                 value="<?php echo $permission[37]['id']; ?>" <?php if(in_array($permission[37]['id'] ,
                                 $rolePermission)) echo 'checked'; ?>>
-                            <?php echo $permission[37]['name']; ?>
+                            
                         </td>
                         <td>
                             <input class="custom-control-input" type="checkbox" data-toggle="toggle" data-onstyle="dark"
@@ -423,7 +420,7 @@
                                 data-size="small" name="permission[]" type="checkbox" name="permission[]"
                                 value="<?php echo $permission[38]['id']; ?>" <?php if(in_array($permission[38]['id'] ,
                                 $rolePermission)) echo 'checked'; ?>>
-                            <?php echo $permission[38]['name']; ?>
+                            
                     </td>
                     <td>
                         <input class="custom-control-input" type="checkbox" data-toggle="toggle" data-onstyle="dark"
@@ -444,7 +441,7 @@
                                 data-size="small" name="permission[]" type="checkbox" name="permission[]"
                                 value="<?php echo $permission[39]['id']; ?>" <?php if(in_array($permission[39]['id'] ,
                                 $rolePermission)) echo 'checked'; ?>>
-                            <?php echo $permission[39]['name']; ?>
+                           
                     </td>
                     <td>
                         <input class="custom-control-input" type="checkbox" data-toggle="toggle" data-onstyle="dark"
