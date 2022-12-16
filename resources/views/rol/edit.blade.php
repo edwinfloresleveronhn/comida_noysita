@@ -35,10 +35,8 @@
                 <thead>
                 <tr>
                 <th>Acceso Administrador</th> 
-                <th><input class="custom-control-input" id="select-all" data-toggle="toggle" data-onstyle="dark"
-                                data-size="small" name="permission[]" type="checkbox" name="permission[]"
-                                value="">
-    <label for="select">Select All</label></th> 
+                <th><input type="checkbox" id="select-all">
+<label for="select-all"></label> Select All</th> 
                 </tr>
                     <tr>
                         <th>Modulo</th>
@@ -492,11 +490,18 @@
     <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
     <script>
 
-$(document).ready(function() {
-    $('#select-all').click(function() {
-        $('input[type="checkbox"]').prop('checked', this.checked);
-    })
-})
+const selectAllCheckbox = document.getElementById('select-all');
+
+selectAllCheckbox.addEventListener('change', () => {
+  const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+  checkboxes.forEach(checkbox => {
+    if (selectAllCheckbox.checked) {
+      checkbox.checked = true;
+    } else {
+      checkbox.checked = false;
+    }
+  });
+});
     </script>
 }
     @stop
