@@ -17,7 +17,7 @@
         <div class="card-body">
             {!! Form::model($role,['method' => 'PUT' , 'route'=>['rol.update', $role->id]]) !!}
             <div class="row">
-                <div class="col-6">
+                <div class="col-12">
                     <div class="form-group">
                         <label for="">Rol</label>
                         <input type="text" class="form-control" id="name" name="name" placeholder=""
@@ -33,11 +33,6 @@
  
             <table id="roles" class="display responsive nowrap" style="width:100%">
                 <thead>
-                <tr>
-                <th>Acceso Administrador</th> 
-                <th><input type="checkbox" id="select-all">
-<label for="select-all"></label> Select All</th> 
-                </tr>
                     <tr>
                         <th>Modulo</th>
                         <th>Ver</th>

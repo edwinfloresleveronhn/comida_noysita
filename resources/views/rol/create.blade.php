@@ -17,7 +17,7 @@
             <div class="card-body">
                 @csrf
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-12">
                         <div class="form-group">
                             <label for="">Rol</label>
                             <input type="text" class="form-control" id="name" name="name" placeholder=""
