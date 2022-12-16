@@ -33,6 +33,10 @@
  
             <table id="roles" class="display responsive nowrap" style="width:100%">
                 <thead>
+                <tr>
+                <th>Acceso Administrador</th> 
+                <th><input type="checkbox" onclick="toggle(this);" />Check all?<br /></th> 
+                </tr>
                     <tr>
                         <th>Modulo</th>
                         <th>Ver</th>
@@ -483,4 +487,13 @@
 
     @section('js')
     <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+    <script>
+        function toggle(source) {
+    var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    for (var i = 0; i < checkboxes.length; i++) {
+        if (checkboxes[i] != source)
+            checkboxes[i].checked = source.checked;
+    }
+    </script>
+}
     @stop
