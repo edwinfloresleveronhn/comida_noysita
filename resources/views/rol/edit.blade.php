@@ -488,20 +488,5 @@
 
     @section('js')
     <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
-    <script>
-
-const selectAllCheckbox = document.getElementById('select-all');
-
-selectAllCheckbox.addEventListener('change', () => {
-  const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-  checkboxes.forEach(checkbox => {
-    if (selectAllCheckbox.checked) {
-      checkbox.checked = true;
-    } else {
-      checkbox.checked = false;
-    }
-  });
-});
-    </script>
-}
+    <script src="{{asset('js/select-all.js')}}"></script>
     @stop
