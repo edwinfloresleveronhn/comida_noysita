@@ -297,7 +297,6 @@
                                 data-size="small" name="permission[]" type="checkbox" name="permission[]"
                                 value="<?php echo $permission[41]['id']; ?>" <?php if(in_array($permission[41]['id'] ,
                                 $rolePermission)) echo 'checked'; ?>>
-                            <?php echo $permission[41]['name']; ?>
                         </td>
                         <td>
                         <input class="custom-control-input" data-toggle="toggle" data-onstyle="dark"
