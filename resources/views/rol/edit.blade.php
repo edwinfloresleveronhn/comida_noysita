@@ -30,27 +30,7 @@
                     </div>
                 </div>
             </div>
-     <!--        <div class="row">
-                <div class="col-6">
-                    <div class="form-group">
-                        <label for="permission">Permisos</label>
-                        <br />
-                        @foreach($permission as $value)
-                        <label for="">{{ Form::checkbox('permission[]', $value->id ,in_array($value->id ,
-                            $rolePermission)) }}
-                            {{$value->name}}
-                        </label>
-                        <br />
-                        @endforeach
-                        <div class="valid-feedback">DATO VALIDO.</div>
-                        <div class="invalid-feedback">LOS CAMPOS NO PUEDEN ESTAR VACIOS.INTRODUZCA UNA FECHA</div>
-                        @error('fecha')
-                        <span class="text-danger">{{$message}}</span>
-                        @enderror
-                    </div>
-                </div>
-            </div> -->
-
+ 
             <table id="roles" class="display responsive nowrap" style="width:100%">
                 <thead>
                     <tr>
