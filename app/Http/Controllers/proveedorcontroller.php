@@ -28,7 +28,10 @@ class proveedorcontroller extends Controller
      */
     public function index()
     {
-        $proveedores = Http::get('https://noysitaapi-production-4864.up.railway.app/proveedores/')->json();
+         $proveedores = Http::get('https://noysitaapi-production.up.railway.app/proveedores/')->json(); 
+
+
+       
     
         return view('proveedor.index',compact('proveedores')); 
     }
@@ -51,7 +54,7 @@ class proveedorcontroller extends Controller
      */
     public function store(ValidacionProveedor $request)
     {
-        $proveedores = Http::post('https://noysitaapi-production-4864.up.railway.app/insertar_proveedor', [
+         $proveedores = Http::post('https://noysitaapi-production.up.railway.app/insertar_proveedor', [
             'NOMBRE_PROVEEDOR'=> $request->nombre,
             'CELULAR_PROVEEDOR' => $request->celular_proveedor,
             'PRODUCTO_VENTA' => $request->producto_venta,
@@ -60,6 +63,7 @@ class proveedorcontroller extends Controller
             'OBSERVACION' => $request->observacion          
         ]); 
 
+   
            return redirect()-> route('proveedor.index')->with('agregado','El proveedor fue agregado correctamente'); 
     }
 
@@ -97,15 +101,16 @@ class proveedorcontroller extends Controller
     public function update(ValidacionProveedor $request, $COD_PROVEEDOR)
     {
         
-        $proveedores  = Http::put('https://noysitaapi-production-4864.up.railway.app/proveedor/edit/'. $COD_PROVEEDOR ,[
+         $proveedores  = Http::put('https://noysitaapi-production.up.railway.app/proveedor/edit/'. $COD_PROVEEDOR ,[
              'NOMBRE_PROVEEDOR'=> $request->nombre,
             'CELULAR_PROVEEDOR' => $request->celular_proveedor,
             'PRODUCTO_VENTA' => $request->producto_venta,
             'PRECIO_PRODUCTO'=> $request->precio_producto,
             'CIUDAD_PROVEEDOR' => $request->ciudad_proveedor,
             'OBSERVACION' => $request->observacion    
-        ]);
+        ]); 
 
+  
         return redirect()-> route('proveedor.index')->with('editado','El proveedor fue editado correctamente'); 
     }
 
@@ -120,7 +125,11 @@ class proveedorcontroller extends Controller
     public function destroy($COD_PROVEEDOR)
     {
         
-        $proveedores = Http::delete('https://noysitaapi-production-4864.up.railway.app/proveedores/delete/'. $COD_PROVEEDOR);
+         $proveedores = Http::delete('https://noysitaapi-production.up.railway.app/proveedores/delete/'. $COD_PROVEEDOR); 
+
+
+   
+
 
         return redirect()-> route('proveedor.index')->with('eliminado','El proveedor fue eliminado correctamente'); 
     }

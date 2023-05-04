@@ -12,10 +12,8 @@ class BitacoraController extends Controller
 
     function __construct()
     {
-        $this->middleware('permission:ver-bitacora' ,['only'=>['index']] );
-    
-
-    } 
+        $this->middleware('permission:ver-bitacora', ['only' => ['index']]);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -23,9 +21,12 @@ class BitacoraController extends Controller
      */
     public function index()
     {
-        $bitacoras = Http::get('https://noysitaapi-production-4864.up.railway.app/bitacora/')->json();
-    
-        return view('bitacora.index',compact('bitacoras')); 
+        // Api funcionando en railway
+       $bitacoras = Http::get('https://noysitaapi-production.up.railway.app//bitacora/')->json(); 
+
+      // Api en localhost
+       
+        return view('bitacora.index', compact('bitacoras'));
     }
 
     /**

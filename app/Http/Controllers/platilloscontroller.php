@@ -26,7 +26,9 @@ class platilloscontroller extends Controller
      */
     public function index()
     {
-        $platillos = Http::get('https://noysitaapi-production-4864.up.railway.app/platillos/')->json();
+        $platillos = Http::get('https://noysitaapi-production.up.railway.app/platillos/')->json();
+ 
+   
     
         return view('platillos.index',compact('platillos')); 
 
@@ -50,11 +52,14 @@ class platilloscontroller extends Controller
      */
     public function store( ValidacionPlatillo $request)
     {
-        $platillos = Http::post('https://noysitaapi-production-4864.up.railway.app/insertar_platillos', [
+        $platillos = Http::post('https://noysitaapi-production.up.railway.app/insertar_platillos', [
             'NOMBRE_PLATILLO'=> $request->nombre_platillo,
             'PRECIO_PLATILLO' => $request->precio_platillo,
             'RECETA_PLATILLO' => $request->receta_platillo,
         ]); 
+ 
+
+      
 
            return redirect()-> route('platillos.index')->with('agregado','El platillos fue agregado correctamente'); 
     }
@@ -92,11 +97,13 @@ class platilloscontroller extends Controller
      */
     public function update(ValidacionPlatillo $request, $COD_PLATILLO)
     {
-        $platillos  = Http::put('https://noysitaapi-production-4864.up.railway.app/platillos/edit/'. $COD_PLATILLO ,[
+         $platillos  = Http::put('https://noysitaapi-production.up.railway.app/platillos/edit/'. $COD_PLATILLO ,[
             'NOMBRE_PLATILLO'=> $request->nombre_platillo,
             'PRECIO_PLATILLO' => $request->precio_platillo,
             'RECETA_PLATILLO' => $request->receta_platillo,
         ]);
+ 
+
 
         return redirect()-> route('platillos.index')->with('editado','El platillo fue editado correctamente'); 
     }
@@ -110,7 +117,9 @@ class platilloscontroller extends Controller
     public function destroy($COD_PLATILLO)
     {
         
-        $platillos = Http::delete('https://noysitaapi-production-4864.up.railway.app/platillos/delete/'. $COD_PLATILLO);
+         $platillos = Http::delete('https://noysitaapi-production.up.railway.app/platillos/delete/'. $COD_PLATILLO); 
+
+       
 
         return redirect()-> route('platillos.index')->with('eliminado','El platillo fue eliminado correctamente'); 
     }

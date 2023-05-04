@@ -28,8 +28,9 @@ class clientecontroller extends Controller
      */
     public function index()
     {
-        $clientes = Http::get('https://noysitaapi-production-4864.up.railway.app/clientes/')->json();
+         $clientes = Http::get('https://noysitaapi-production.up.railway.app/clientes/')->json(); 
     
+       
         return view('clientes.index',compact('clientes')); 
 
     }
@@ -52,14 +53,16 @@ class clientecontroller extends Controller
      */
     public function store(ValidacionCliente $request)
     {
-        $clientes = Http::post('https://noysitaapi-production-4864.up.railway.app/insertar_clientes', [
+       $clientes = Http::post('https://noysitaapi-production.up.railway.app/insertar_clientes', [
             'IDENTIDAD_CLIENTE'=> $request->identidad,
             'RTN_CLIENTE' => $request->rtn,
             'NOMBRE_CLIENTE' => $request->nombre,
             'DIRECCION'=> $request->direccion,
             'TIPO_PAGO' => $request->tipo_pago,
             'FECHA_INGRESO_CLIENTE' => $request->ingreso_cliente          
-        ]); 
+        ]);  
+
+        
 
            return redirect()-> route('clientes.index')->with('agregado','El cliente fue agregado correctamente'); 
     }
@@ -97,7 +100,7 @@ class clientecontroller extends Controller
      */
     public function update(ValidacionCliente $request, $COD_CLIENTE)
     {
-        $clientes  = Http::put('https://noysitaapi-production-4864.up.railway.app/clientes/edit/'. $COD_CLIENTE ,[
+         $clientes  = Http::put('https://noysitaapi-production.up.railway.app/clientes/edit/'. $COD_CLIENTE ,[
             'IDENTIDAD_CLIENTE'=> $request->identidad,
             'RTN_CLIENTE' => $request->rtn,
             'NOMBRE_CLIENTE' => $request->nombre,
@@ -105,9 +108,9 @@ class clientecontroller extends Controller
             'TIPO_PAGO' => $request->tipo_pago,
             'FECHA_INGRESO_CLIENTE' => $request->ingreso_cliente          
               
-        ]);
+        ]); 
 
-        return redirect()-> route('clientes.index')->with('editado','El cliente fue editado correctamente'); 
+               return redirect()-> route('clientes.index')->with('editado','El cliente fue editado correctamente'); 
     }
 
     /**
@@ -119,7 +122,10 @@ class clientecontroller extends Controller
     public function destroy($COD_CLIENTE)
     {
 
-        $clientes = Http::delete('https://noysitaapi-production-4864.up.railway.app/clientes/delete/'. $COD_CLIENTE);
+         $clientes = Http::delete('https://noysitaapi-production.up.railway.app/clientes/delete/'. $COD_CLIENTE); 
+
+
+      
 
         return redirect()-> route('clientes.index')->with('eliminado','El cliente fue eliminado correctamente'); 
     }

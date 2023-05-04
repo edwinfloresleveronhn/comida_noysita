@@ -26,7 +26,10 @@ class caicontroller extends Controller
      */
     public function index()
     {
-        $CAIS = Http::get('https://noysitaapi-production-4864.up.railway.app/cai/')->json();
+      $CAIS = Http::get('https://noysitaapi-production.up.railway.app//cai/')->json(); 
+          
+
+        
     
         return view('cai.index',compact('CAIS')); 
     }
@@ -49,13 +52,14 @@ class caicontroller extends Controller
      */
     public function store(ValidacionCai $request)
     {
-        $CAIS = Http::post('https://noysitaapi-production-4864.up.railway.app/insertar_cai', [
+         $CAIS = Http::post('https://noysitaapi-production.up.railway.app/insertar_cai', [
             'CAI'=> $request->cai,
             'TIPO_DOCUMENTO' => $request->tipo_documento,
             'VALOR_FISCAL' => $request->valor_fiscal,
             'FECHA_VENCIMIENTO'=> $request->fecha_vencimiento,
               
         ]); 
+      
 
            return redirect()-> route('cai.index')->with('agregado','el CAI fue agregado correctamente'); 
         
@@ -94,12 +98,14 @@ class caicontroller extends Controller
      */
     public function update(ValidacionCai $request, $COD_CAI)
     {
-        $CAIS  = Http::put('https://noysitaapi-production-4864.up.railway.app/cai/edit/'. $COD_CAI ,[
+        $CAIS  = Http::put('https://noysitaapi-production.up.railway.app/cai/edit/'. $COD_CAI ,[
             'CAI'=> $request->cai,
             'TIPO_DOCUMENTO' => $request->tipo_documento,
             'VALOR_FISCAL' => $request->valor_fiscal,
             'FECHA_VENCIMIENTO'=> $request->fecha_vencimiento,
-        ]);
+        ]); 
+
+       
 
         return redirect()-> route('cai.index')->with('editado','El Cai fue editado correctamente'); 
     }

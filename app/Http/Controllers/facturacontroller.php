@@ -27,7 +27,9 @@ class facturacontroller extends Controller
      */
     public function index()
     {
-        $facturas = Http::get('https://noysitaapi-production-4864.up.railway.app/facturas/')->json();
+         $facturas = Http::get('https://noysitaapi-production.up.railway.app/facturas/')->json(); 
+
+       
     
         return view('factura.index',compact('facturas')); 
     }
@@ -50,7 +52,7 @@ class facturacontroller extends Controller
      */
     public function store(ValidacionFactura $request)
     {
-        $facturas = Http::post('https://noysitaapi-production-4864.up.railway.app/insertar_factura', [
+         $facturas = Http::post('https://noysitaapi-production.up.railway.app/insertar_factura', [
             'NUMERO_FACTURA'=> $request->numero_factura,
             'NOMBRE_CLIENTE' => $request->nombre_cliente,
             'RTN_CLIENTE' => $request->rtn,
@@ -62,8 +64,10 @@ class facturacontroller extends Controller
             'IVA' => $request->iva,
             'TOTAL_FACTURA' => $request->total_factura,
               
-        ]); 
+        ]);  
 
+
+        
            return redirect()-> route('factura.index')->with('agregado','La Factura fue agregado correctamente');
     }
 
@@ -102,7 +106,7 @@ class facturacontroller extends Controller
      */
     public function update(Request $request, $COD_FACTURA)
     {
-        $facturas  = Http::put('https://noysitaapi-production-4864.up.railway.app/facturas/edit/'. $COD_FACTURA ,[
+         $facturas  = Http::put('https://noysitaapi-production.up.railway.app/facturas/edit/'. $COD_FACTURA ,[
             'NUMERO_FACTURA'=> $request->numero_factura,
             'NOMBRE_CLIENTE' => $request->nombre_cliente,
             'RTN_CLIENTE' => $request->rtn,
@@ -114,7 +118,10 @@ class facturacontroller extends Controller
             'IVA' => $request->iva,
             'TOTAL_FACTURA' => $request->total_factura,
                
-        ]);
+        ]); 
+
+
+ 
 
         return redirect()-> route('factura.index')->with('editado','la factura editado correctamente'); 
     }

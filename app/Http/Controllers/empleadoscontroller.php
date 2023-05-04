@@ -28,7 +28,9 @@ class empleadoscontroller extends Controller
      */
     public function index()
     {
-        $empleados = Http::get('https://noysitaapi-production-4864.up.railway.app/empleados/')->json();
+         $empleados = Http::get('https://noysitaapi-production.up.railway.app/empleados/')->json();
+         
+     
     
         return view('empleados.index',compact('empleados')); 
 
@@ -52,7 +54,7 @@ class empleadoscontroller extends Controller
      */
     public function store(ValidacionEmpleado $request)
     {
-        $empleados = Http::post('https://noysitaapi-production-4864.up.railway.app/insertar_empleado', [
+         $empleados = Http::post('https://noysitaapi-production.up.railway.app/insertar_empleado', [
             'NOMBRE_EMPLEADO'=> $request->nombre,
             'IDENTIDAD_EMPLEADO' => $request->identidad,
             'EDAD_EMPLEADO' => $request->edad,
@@ -64,6 +66,9 @@ class empleadoscontroller extends Controller
             'SALARIO_EMPLEADO' => $request->salario, 
             'FECHA_INGRESO' => $request->fecha_ingreso,                     
         ]); 
+ 
+
+  
 
            return redirect()-> route('empleados.index')->with('agregado','El empleado fue agregado correctamente'); 
     }
@@ -103,7 +108,7 @@ class empleadoscontroller extends Controller
      */
     public function update(ValidacionEmpleado $request, $COD_EMPLEADO)
     {
-        $empleados = Http::put('https://noysitaapi-production-4864.up.railway.app/empleados/edit/' .$COD_EMPLEADO ,[
+        $empleados = Http::put('https://noysitaapi-production.up.railway.app/empleados/edit/' .$COD_EMPLEADO ,[
             'NOMBRE_EMPLEADO'=> $request->nombre,
             'IDENTIDAD_EMPLEADO' => $request->identidad,
             'EDAD_EMPLEADO' => $request->edad,
@@ -115,7 +120,8 @@ class empleadoscontroller extends Controller
             'SALARIO_EMPLEADO' => $request->salario, 
             'FECHA_INGRESO' => $request->fecha_ingreso,                     
         ]); 
-
+ 
+        
            return redirect()-> route('empleados.index')->with('Editado','El empleado fue editado correctamente'); 
     }
 
@@ -127,8 +133,9 @@ class empleadoscontroller extends Controller
      */
     public function destroy($COD_EMPLEADO)
     {
-        $empleados = Http::delete('https://noysitaapi-production-4864.up.railway.app/empleados/delete/'. $COD_EMPLEADO);
+         $empleados = Http::delete('https://noysitaapi-production.up.railway.app/empleados/delete/'. $COD_EMPLEADO); 
 
+       
         return redirect()-> route('empleados.index')->with('eliminado','El empleado fue eliminado correctamente'); 
     }
 }
