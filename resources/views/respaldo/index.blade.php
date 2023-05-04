@@ -75,7 +75,7 @@
 													<div class="col-md-12 text-center">
 												<a href="./respaldo" download="noysita_fin.sql" download="">
 													
-													<button ><i class="fas fa-download"></i> Descargar archivo</button>
+													<button ><i class="fas fa-download"></i> Descargar Copia </button>
 													</div>
 												</a>
 											</body>

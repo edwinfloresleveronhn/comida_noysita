@@ -59,7 +59,7 @@
                                 <!-- Site-key for automated tests -->
                                 <div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"></div>
                              <x-button class="ml-3" >
-                    {{ __('ENTRAR') }}
+                    {{ __('INGRESAR') }}
                 </x-button>
                             </form>
                         </body>
