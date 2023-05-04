@@ -62,30 +62,25 @@
 								<div class="row">
 									<div class="col-sm-12 col-xs-12">
 										<div class="mb-30">
-											<h3 class="text-center txt-dark mb-10">Conecta tu configuración</h3>
-											<h6 class="text-center nonecase-font txt-grey">Ingrese los detalles de su base de datos a continuación</h6>
-										</div>	
-										<div class="form-wrap">
-											<form action="database_backup.php" method="post" id="">
-												<div class="form-group">
-													<label class="control-label mb-10" >Host</label>
-													<input type="text" class="form-control" placeholder="Ingrese Name Server de DB, ejemplo: Localhost" name="server" id="server" required="" autocomplete="on">
-												</div>
-												<div class="form-group">
-													<label class="control-label mb-10" >Nombre de usuario de la base de datos</label>
-													<input type="text" class="form-control" placeholder="Ingrese user de DB, ejemplo: root" name="username" id="username" required="" autocomplete="on">
-												</div>
-												<div class="form-group">
-													<label class="pull-left control-label mb-10" >Contraseña de la base de datos</label>
-													<input type="password" class="form-control" placeholder="Ingrese la contraseña de la base de datos" name="password" id="password" >
-												</div>
-												<div class="form-group">
-													<label class="pull-left control-label mb-10">Nombre de la base de datos</label>
-													<input type="text" class="form-control" placeholder="Ingresa Nombre de DB" name="dbname" id="dbname" required="" autocomplete="on">
-												</div>
-												<div class="form-group text-center">
-													<button type="submit" name="backupnow" class="btn btn-info btn-rounded">Iniciar copia de seguridad</button>
-												</div>
+											<h3 class="text-center txt-dark mb-10">RESPALDO DE BASE DE DATOS</h3>
+											
+											<!DOCTYPE html>
+											<html>
+											<head>
+												<meta charset="UTF-8">
+
+											<body>
+												<h1 class="text-center txt-dark mb-10">PRESIONE EL BOTON PARA GENERAR LA COPIA</h1>
+												<div class="container my-3 bg-light">
+													<div class="col-md-12 text-center">
+												<a href="./respaldo" download="noysita_fin.sql" download="">
+													
+													<button ><i class="fas fa-download"></i> Descargar archivo</button>
+													</div>
+												</a>
+											</body>
+											</html>
+											
 											</form>
 										</div>
 									</div>	

@@ -45,31 +45,54 @@
                                 name="password"
                                 required autocomplete="current-password" />
             </div>
+            <div class="mt-4">
+                <x-label for=" ReCaptcha " :value="__('RECAPTCHA')" />
+                <html>
+                    <!DOCTYPE HTML>
+                    <html>
+                        <head>
+                          <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+                          <script src='https://www.google.com/recaptcha/api.js'></script>
+                        </head>
+                        <body>
+                            <form class="form-signin" method="post" action="post.php">
+                                <!-- Site-key for automated tests -->
+                                <div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"></div>
+                             <x-button class="ml-3" >
+                    {{ __('ENTRAR') }}
+                </x-button>
+                            </form>
+                        </body>
+                    </html>
+
+            </div>
 
             <!-- Remember Me -->
             <div class="block mt-4">
                 <label for="remember_me" class="inline-flex items-center">
-                    <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="remember">
-                    <span class="ml-2 text-sm text-gray-600">{{ __('RECORDARME') }}</span>
+                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('register') }}">
+                    {{ __('REGISTRARSE AHORA ') }}  
                 </label>
             </div>
 
-            <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('register') }}">
-                    {{ __('REGISTRARSE AHORA ') }}  
-                </a>
-                <p></p>
-                @if (Route::has('password.request'))
+            <div class="block mt-4">
+                <label for="remember_me" class="inline-flex items-center">
+                    @if (Route::has('password.request'))
                     <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
                         {{ __('OLVIDE MI CONTRASEÑA?') }}
                     </a>
-                @endif
+                @endif 
+            </div>
+
+            <div class="flex items-center justify-end mt-4">
+                
+                </a>
+
+               
 
              
 
-                <x-button class="ml-3" >
-                    {{ __('ENTRAR') }}
-                </x-button>
+              
             </div>
          </form>
     </x-auth-card>
