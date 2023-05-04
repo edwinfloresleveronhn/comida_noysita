@@ -22,7 +22,7 @@ class BitacoraController extends Controller
     public function index()
     {
         // Api funcionando en railway
-       $bitacoras = Http::get('https://noysitaapi-production.up.railway.app//bitacora/')->json(); 
+       $bitacoras = Http::get('https://noysitaapi-production.up.railway.app/bitacora/')->json(); 
 
       // Api en localhost
        
